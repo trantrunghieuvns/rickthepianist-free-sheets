@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RickThePianist — 100% Free Piano Sheet Music PDFs & Felt Piano Tutorials (2026)</title>
+  <meta name="description" content="Download 31+ 100% FREE printable A4 piano sheet music PDFs — Viral Pop, Vietnamese Ballads, Christmas, Cathedral Hymns & Classical. Subscribe & message @rickthepianist to request any song free!">
+  <meta name="keywords" content="free piano sheet music pdf, sheet nhạc piano miễn phí, 無料ピアノ楽譜 PDF, 무료 피아노 악보 PDF, 免費鋼琴譜 PDF, partituras piano gratis PDF, partition piano gratuite PDF, kostenlose klaviernoten PDF, RickThePianist">
+  <link rel="canonical" href="https://trantrunghieuvns.github.io/rickthepianist-free-sheets/">
+  <link rel="alternate" type="application/rss+xml" title="RickThePianist Free Piano Sheets RSS" href="https://trantrunghieuvns.github.io/rickthepianist-free-sheets/feed.xml">
+  <style>
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --ink: #0f172a;
+  --muted: #475569;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --cta: #ea580c;
+  --cta-hover: #c2410c;
+  --radius: 14px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); }
+body { margin: 0; min-height: 100dvh; display: flex; flex-direction: column; line-height: 1.5; }
+a { color: inherit; text-decoration: none; }
+
+.topbar {
+  position: sticky; top: 0; z-index: 40;
+  height: 54px; background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(12px, 3vw, 28px); gap: 12px;
+}
+.brand { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 1rem; letter-spacing: -0.02em; white-space: nowrap; }
+.brand-dot { width: 10px; height: 10px; border-radius: 999px; background: var(--cta); flex-shrink: 0; }
+.top-actions { display: flex; align-items: center; gap: 8px; }
+.lang-select {
+  height: 34px; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--surface); color: var(--ink); padding: 0 8px; font-size: 0.85rem; font-weight: 600;
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  height: 36px; padding: 0 14px; border-radius: 9px; font-size: 0.875rem; font-weight: 700;
+  border: 1px solid transparent; cursor: pointer; white-space: nowrap; transition: background 0.15s ease;
+}
+.btn-cta { background: var(--cta); color: #ffffff; }
+.btn-cta:hover { background: var(--cta-hover); }
+.btn-accent { background: var(--accent); color: #ffffff; }
+.btn-accent:hover { background: var(--accent-hover); }
+.btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--border); }
+.btn-ghost:hover { background: #f1f5f9; }
+
+.shell { width: min(1240px, 100%); margin: 0 auto; padding: clamp(16px, 3vw, 28px); flex: 1; }
+
+.hero {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: clamp(18px, 3vw, 32px); margin-bottom: 20px;
+  display: grid; grid-template-columns: 1fr; gap: 18px; align-items: center;
+}
+@media (min-width: 860px) {
+  .hero { grid-template-columns: 1.35fr 0.65fr; }
+}
+.hero-kicker {
+  display: inline-block; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--accent); background: #eff6ff; padding: 4px 10px; border-radius: 999px; margin-bottom: 10px;
+}
+.hero h1 {
+  margin: 0 0 10px; font-size: clamp(1.45rem, 1.1rem + 1.6vw, 2.35rem);
+  line-height: 1.18; letter-spacing: -0.025em;
+}
+.hero p { margin: 0 0 16px; color: var(--muted); font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem); max-width: 62ch; }
+.hero-cta-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.hero-preview {
+  display: block; border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  background: #f1f5f9; max-width: 280px; justify-self: center;
+}
+.hero-preview img { width: 100%; height: auto; aspect-ratio: 210 / 297; object-fit: cover; display: block; }
+
+.toolbar {
+  display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px;
+}
+@media (min-width: 760px) {
+  .toolbar { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+.search-input {
+  width: 100%; max-width: 380px; height: 40px; padding: 0 14px;
+  border: 1px solid var(--border); border-radius: 10px; background: var(--surface);
+  font-size: 0.94rem; color: var(--ink);
+}
+.search-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.chip-row {
+  display: flex; gap: 8px; overflow-x: auto; flex-wrap: nowrap;
+  scrollbar-width: none; -ms-overflow-style: none; padding-bottom: 2px;
+}
+.chip-row::-webkit-scrollbar { display: none; }
+.chip {
+  flex: 0 0 auto; height: 34px; padding: 0 13px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+  font-size: 0.84rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+}
+.chip[aria-pressed="true"] { background: var(--ink); color: #ffffff; border-color: var(--ink); }
+
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(min(275px, 100%), 1fr));
+  gap: 16px;
+}
+.card-wrap { container-type: inline-size; }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; display: flex; flex-direction: column; height: 100%;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06); }
+.card-thumb {
+  display: block; background: #f1f5f9; border-bottom: 1px solid var(--border); overflow: hidden;
+}
+.card-thumb img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; display: block; }
+.card-body { padding: 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.card-meta { display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 0.76rem; color: var(--muted); font-weight: 600; }
+.badge { background: #f1f5f9; color: var(--ink); padding: 2px 8px; border-radius: 6px; }
+.card-title { margin: 0; font-size: 1.02rem; font-weight: 800; line-height: 1.28; }
+.card-artist { margin: 0; font-size: 0.86rem; color: var(--muted); }
+.card-actions { margin-top: auto; padding-top: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@container (max-width: 240px) {
+  .card-actions { grid-template-columns: 1fr; }
+}
+.card-actions .btn { height: 34px; font-size: 0.8rem; padding: 0 8px; }
+
+.seo-footer {
+  margin-top: 36px; padding: 20px; background: var(--surface); border-top: 1px solid var(--border);
+  font-size: 0.84rem; color: var(--muted); text-align: center;
+}
+.seo-langs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; margin: 10px auto 0; max-width: 960px; font-size: 0.8rem; }
+
+dialog {
+  width: min(480px, calc(100dvw - 24px)); border: 1px solid var(--border); border-radius: 16px;
+  padding: 22px; background: var(--surface); color: var(--ink); box-shadow: 0 24px 60px rgba(15, 23, 42, 0.25);
+}
+dialog::backdrop { background: rgba(15, 23, 42, 0.55); backdrop-filter: blur(2px); }
+.dlg-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.dlg-head h2 { margin: 0; font-size: 1.15rem; }
+.dlg-close { width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); cursor: pointer; font-weight: 700; }
+.dlg-steps { margin: 0 0 16px; padding-left: 18px; color: var(--muted); font-size: 0.92rem; }
+.dlg-steps li { margin-bottom: 6px; }
+.dlg-btns { display: flex; flex-direction: column; gap: 8px; }
+</style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "RickThePianist Free Piano Sheet Music PDF Library", "url": "https://trantrunghieuvns.github.io/rickthepianist-free-sheets", "description": "100% Free printable A4 piano sheet music PDFs with calm felt piano tutorials & synced lyrics across Pop, Vietnamese Ballads, Christmas, Cathedral Hymns & Classical.", "sameAs": ["https://www.youtube.com/@rickthepianist"]}</script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="brand-dot"></span>RickThePianist</a>
+    <div class="top-actions">
+      <select id="langSelect" class="lang-select" aria-label="Language">
+        <option value="en">EN</option>
+        <option value="vi">VI</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="zh">繁體中文</option>
+        <option value="es">ES</option>
+        <option value="fr">FR</option>
+        <option value="de">DE</option>
+      </select>
+      <a class="btn btn-cta" href="https://www.youtube.com/@rickthepianist?sub_confirmation=1" target="_blank" rel="noopener" id="topSubBtn">Subscribe</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <span class="hero-kicker" id="heroKicker">31 Free Printable A4 Piano Sheets • Updated Daily</span>
+        <h1 id="heroTitle">100% Free Piano Sheet Music PDFs &amp; Calm Felt Piano Tutorials</h1>
+        <p id="heroDesc">Clean, playable solo felt piano arrangements with zero chaotic runs. Download every 4-page PDF free — or subscribe &amp; message me any song you want to practice and I'll arrange a free PDF for you.</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-cta" href="https://www.youtube.com/@rickthepianist?sub_confirmation=1" target="_blank" rel="noopener" id="heroSubBtn">🔔 Subscribe on YouTube</a>
+          <button type="button" class="btn btn-accent" id="openReqBtn">💬 Request a Free Practice Sheet</button>
+        </div>
+      </div>
+      <a class="hero-preview" href="songs/stop-the-wedding.html"><img src="assets/stop-the-wedding.webp" alt="Stop The Wedding! Free Piano Sheet PDF Preview" fetchpriority="high" width="640" height="904"></a>
+    </section>
+
+    <section class="toolbar" aria-label="Search and filter free sheets">
+      <input type="search" id="searchInput" class="search-input" placeholder="Search song, artist, or key (e.g. Stop The Wedding, Phép Màu, Christmas)..." aria-label="Search piano sheets">
+      <div class="chip-row" role="group" aria-label="Filter categories">
+        <button type="button" class="chip" data-filter="all" aria-pressed="true">All (31)</button>
+        <button type="button" class="chip" data-filter="viral" aria-pressed="false">Viral Hits</button>
+        <button type="button" class="chip" data-filter="vietnamese" aria-pressed="false">Vietnamese</button>
+        <button type="button" class="chip" data-filter="christmas" aria-pressed="false">Christmas &amp; New Year</button>
+        <button type="button" class="chip" data-filter="classical" aria-pressed="false">Cathedral &amp; Classical</button>
+        <button type="button" class="chip" data-filter="cinema" aria-pressed="false">Cinema &amp; Anime</button>
+      </div>
+    </section>
+
+    <section class="grid" id="sheetGrid" aria-label="Free Piano Sheet Music Catalog">
+      <div class="card-wrap" data-cat="viral" data-search="stop the wedding! ashe e major viral"><article class="card"><a class="card-thumb" href="songs/stop-the-wedding.html"><img src="assets/stop-the-wedding.webp" alt="Stop The Wedding! Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">E major</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/stop-the-wedding.html">Stop The Wedding!</a></h2><p class="card-artist">Ashe</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1JuuKixppiFCCdqAVgZMBgSgx5915DhUw/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/otl3619NRyY" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="viral" data-search="training season dua lipa f minor viral"><article class="card"><a class="card-thumb" href="songs/training-season.html"><img src="assets/training-season.webp" alt="Training Season Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">F minor</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/training-season.html">Training Season</a></h2><p class="card-artist">Dua Lipa</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1Ar9CElFdBVukqndJAZqdvQAJOT5mP_vP/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/tU2iXoxjbuU" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="viral" data-search="arcade duncan laurence f major viral"><article class="card"><a class="card-thumb" href="songs/arcade.html"><img src="assets/arcade.webp" alt="Arcade Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">F major</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/arcade.html">Arcade</a></h2><p class="card-artist">Duncan Laurence</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1TwjIgIaszhf2RP2Wt_2QVi5aaeKRqLJQ/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/QLPk3s39Bzk" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="vietnamese" data-search="phép màu maydays ft. minh tốc c major vietnamese"><article class="card"><a class="card-thumb" href="songs/phep-mau.html"><img src="assets/phep-mau.webp" alt="Phép Màu Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">C major</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/phep-mau.html">Phép Màu</a></h2><p class="card-artist">MAYDAYs ft. Minh Tốc</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/10GcO2R4A8VslQb-b5i58tZGX6YPY-cme/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/fkcPlegfgMw" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="vietnamese" data-search="tìm em hngle ft. bảo anh eb major vietnamese"><article class="card"><a class="card-thumb" href="songs/tim-em.html"><img src="assets/tim-em.webp" alt="Tìm Em Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Eb major</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/tim-em.html">Tìm Em</a></h2><p class="card-artist">Hngle ft. Bảo Anh</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1yBE0bhx2Tyq-E4GPIJIlLbc2BWmuIll8/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/35ewgc4n4lQ" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="vietnamese" data-search="niệm khúc cuối ngô thụy miên d major vietnamese"><article class="card"><a class="card-thumb" href="songs/niem-khuc-cuoi.html"><img src="assets/niem-khuc-cuoi.webp" alt="Niệm Khúc Cuối Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">D major</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/niem-khuc-cuoi.html">Niệm Khúc Cuối</a></h2><p class="card-artist">Ngô Thụy Miên</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1NboiyFgqAK7eOfncKYgU7fwzcItD8kM3/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/zsLclsKygXU" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="viral" data-search="babydoll jamie miller f major viral"><article class="card"><a class="card-thumb" href="songs/babydoll.html"><img src="assets/babydoll.webp" alt="Babydoll Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">F major</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/babydoll.html">Babydoll</a></h2><p class="card-artist">Jamie Miller</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1BDig_IMpLL74aQHZSJdlrr3m5vPau71b/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/OT2ClNICdmU" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="christmas" data-search="snowman sia c major christmas"><article class="card"><a class="card-thumb" href="songs/snowman.html"><img src="assets/snowman.webp" alt="Snowman Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">C major</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/snowman.html">Snowman</a></h2><p class="card-artist">Sia</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1p3XSUt6IFzT4_5aVtPXrFjhZNFpdBtMo/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/nDIFuhVjkMY" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="christmas" data-search="last christmas george michael / wham! (holiday classic) felt piano christmas"><article class="card"><a class="card-thumb" href="songs/last-christmas.html"><img src="assets/last-christmas.webp" alt="Last Christmas Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/last-christmas.html">Last Christmas</a></h2><p class="card-artist">George Michael / Wham! (Holiday Classic)</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1Ag5UEhaNtAW5PTFoU4GAnWEVf9C2rkRI/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/OLHZLYSK2Zc" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="christmas" data-search="all i want for christmas is you mariah carey (holiday anthem) felt piano christmas"><article class="card"><a class="card-thumb" href="songs/all-i-want-for-christmas-is-you.html"><img src="assets/all-i-want-for-christmas-is-you.webp" alt="All I Want For Christmas Is You Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/all-i-want-for-christmas-is-you.html">All I Want For Christmas Is You</a></h2><p class="card-artist">Mariah Carey (Holiday Anthem)</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1oahKIrUM13zU8GMwzAlrwIpd_4_scrhe/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/qhoj-42g8Ig" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="christmas" data-search="dance of the sugar plum fairy pyotr ilyich tchaikovsky (1892) felt piano christmas"><article class="card"><a class="card-thumb" href="songs/dance-of-the-sugar-plum-fairy.html"><img src="assets/dance-of-the-sugar-plum-fairy.webp" alt="Dance of the Sugar Plum Fairy Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/dance-of-the-sugar-plum-fairy.html">Dance of the Sugar Plum Fairy</a></h2><p class="card-artist">Pyotr Ilyich Tchaikovsky (1892)</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1UB7rMZrwt__Kd_vAYOglBxom-IiyWzKD/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/wLo_jhj2MmE" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="viral" data-search="die with a smile lady gaga &amp; bruno mars (global mega hit) felt piano viral"><article class="card"><a class="card-thumb" href="songs/die-with-a-smile.html"><img src="assets/die-with-a-smile.webp" alt="Die With A Smile Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/die-with-a-smile.html">Die With A Smile</a></h2><p class="card-artist">Lady Gaga &amp; Bruno Mars (Global Mega Hit)</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1OP9ifDuOn2k7_2uaPFS0kq2K-AHC2fhy/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/XmfgsO6CnYw" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="classical" data-search="gymnopédie no. 1 erik satie (1888) felt piano classical"><article class="card"><a class="card-thumb" href="songs/gymnopedie-no-1.html"><img src="assets/gymnopedie-no-1.webp" alt="Gymnopédie No. 1 Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/gymnopedie-no-1.html">Gymnopédie No. 1</a></h2><p class="card-artist">Erik Satie (1888)</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1ztvYWOkNPSCicMx3FihNxowLxJuugUwi/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/eILME72BH0Q" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="christmas" data-search="happy new year abba (new year classic) felt piano christmas"><article class="card"><a class="card-thumb" href="songs/happy-new-year.html"><img src="assets/happy-new-year.webp" alt="Happy New Year Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/happy-new-year.html">Happy New Year</a></h2><p class="card-artist">ABBA (New Year Classic)</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1BdTWQh1GUqnERgAqOz8nid8QzufANG9z/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/BLwuri9RC1g" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="cinema" data-search="interstellar main theme (cornfield chase) rickthepianist arrangement e minor cinema"><article class="card"><a class="card-thumb" href="songs/interstellar-main-theme-cornfield-chase.html"><img src="assets/interstellar-main-theme-cornfield-chase.webp" alt="Interstellar Main Theme (Cornfield Chase) Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">E minor</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/interstellar-main-theme-cornfield-chase.html">Interstellar Main Theme (Cornfield Chase)</a></h2><p class="card-artist">RickThePianist Arrangement</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1Qunt-G8X_OPD6RVIv9fSzHb8kpNk6YMg/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/NMGQPBFPe2I" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="cinema" data-search="merry-go-round of life (howl&#x27;s moving castle) rickthepianist arrangement d minor cinema"><article class="card"><a class="card-thumb" href="songs/merry-go-round-of-life-howl-s-moving-castle.html"><img src="assets/merry-go-round-of-life-howl-s-moving-castle.webp" alt="Merry-Go-Round of Life (Howl&#x27;s Moving Castle) Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">D minor</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/merry-go-round-of-life-howl-s-moving-castle.html">Merry-Go-Round of Life (Howl&#x27;s Moving Castle)</a></h2><p class="card-artist">RickThePianist Arrangement</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1jTVLB8KDoqh29JYcR4mTYcazGfgHZtw_/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/1GoEXzwOU3I" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="classical" data-search="moonlight sonata (1st movement) ludwig van beethoven (1801) felt piano classical"><article class="card"><a class="card-thumb" href="songs/moonlight-sonata-1st-movement.html"><img src="assets/moonlight-sonata-1st-movement.webp" alt="Moonlight Sonata (1st Movement) Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/moonlight-sonata-1st-movement.html">Moonlight Sonata (1st Movement)</a></h2><p class="card-artist">Ludwig van Beethoven (1801)</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1-CopSCzOQmfLYOW8pxvcht9RDmnaGn4E/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/Q3Btyexg46c" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="classical" data-search="nocturne op. 9 no. 2 frédéric chopin (1832) felt piano classical"><article class="card"><a class="card-thumb" href="songs/nocturne-op-9-no-2.html"><img src="assets/nocturne-op-9-no-2.webp" alt="Nocturne Op. 9 No. 2 Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/nocturne-op-9-no-2.html">Nocturne Op. 9 No. 2</a></h2><p class="card-artist">Frédéric Chopin (1832)</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1rC4A1ShHyJ_wBCRc20a1CPMEzkN3hCsa/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/Jxez-A_r-0c" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="christmas" data-search="o holy night (cantique de noël) rickthepianist arrangement felt piano christmas"><article class="card"><a class="card-thumb" href="songs/o-holy-night-cantique-de-noel.html"><img src="assets/o-holy-night-cantique-de-noel.webp" alt="O Holy Night (Cantique de Noël) Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/o-holy-night-cantique-de-noel.html">O Holy Night (Cantique de Noël)</a></h2><p class="card-artist">RickThePianist Arrangement</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1VC2O5s0NOC-Sulkffn1iSEPJiwJFqTMK/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/PbfCz_AIHTM" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="classical" data-search="passacaglia handel / halvorsen a minor classical"><article class="card"><a class="card-thumb" href="songs/passacaglia.html"><img src="assets/passacaglia.webp" alt="Passacaglia Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">A minor</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/passacaglia.html">Passacaglia</a></h2><p class="card-artist">Handel / Halvorsen</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1keEaSF44C0UWq-gQESZVa3h_26n8NWqg/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/L1FfxpurA4g" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="classical" data-search="prelude in c major (bwv 846) rickthepianist arrangement felt piano classical"><article class="card"><a class="card-thumb" href="songs/prelude-in-c-major-bwv-846.html"><img src="assets/prelude-in-c-major-bwv-846.webp" alt="Prelude in C Major (BWV 846) Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/prelude-in-c-major-bwv-846.html">Prelude in C Major (BWV 846)</a></h2><p class="card-artist">RickThePianist Arrangement</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/15cRs_waZFzvp74S745XsmIDXxd3uG9CZ/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/Tm6TUJ1rOd4" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="classical" data-search="winter (the four seasons) antonio vivaldi (1725) felt piano classical"><article class="card"><a class="card-thumb" href="songs/winter-the-four-seasons.html"><img src="assets/winter-the-four-seasons.webp" alt="Winter (The Four Seasons) Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/winter-the-four-seasons.html">Winter (The Four Seasons)</a></h2><p class="card-artist">Antonio Vivaldi (1725)</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1GWq_GOXXJCC9cNZ8gf4WLek8DNld1cBc/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="https://youtu.be/g3Mgj4LPldc" target="_blank" rel="noopener">▶ Tutorial</a></div></div></article></div><div class="card-wrap" data-cat="viral" data-search="apt. rosé &amp; bruno mars felt piano viral"><article class="card"><a class="card-thumb" href="songs/apt.html"><img src="assets/apt.webp" alt="APT. Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/apt.html">APT.</a></h2><p class="card-artist">ROSÉ &amp; Bruno Mars</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/13JaDzM4upWhgfkt77L5Coj9bteNwrsYB/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="songs/apt.html">View Page</a></div></div></article></div><div class="card-wrap" data-cat="christmas" data-search="auld lang syne (new year piano) rickthepianist arrangement felt piano christmas"><article class="card"><a class="card-thumb" href="songs/auld-lang-syne-new-year-piano.html"><img src="assets/auld-lang-syne-new-year-piano.webp" alt="Auld Lang Syne (New Year Piano) Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/auld-lang-syne-new-year-piano.html">Auld Lang Syne (New Year Piano)</a></h2><p class="card-artist">RickThePianist Arrangement</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1MHcDsjFy91XfbOllTjI-bSjk-KOQsuuz/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="songs/auld-lang-syne-new-year-piano.html">View Page</a></div></div></article></div><div class="card-wrap" data-cat="viral" data-search="back to friends sombr felt piano viral"><article class="card"><a class="card-thumb" href="songs/back-to-friends.html"><img src="assets/back-to-friends.webp" alt="back to friends Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/back-to-friends.html">back to friends</a></h2><p class="card-artist">sombr</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1T00mX4tvtyOvXQEEI0MM1u2YhKU9qV77/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="songs/back-to-friends.html">View Page</a></div></div></article></div><div class="card-wrap" data-cat="viral" data-search="birds of a feather billie eilish d major viral"><article class="card"><a class="card-thumb" href="songs/birds-of-a-feather.html"><img src="assets/birds-of-a-feather.webp" alt="Birds of a Feather Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">D major</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/birds-of-a-feather.html">Birds of a Feather</a></h2><p class="card-artist">Billie Eilish</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/197pkBUiIDt2Mo5bPzUm5K2vUrBvW8MWF/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="songs/birds-of-a-feather.html">View Page</a></div></div></article></div><div class="card-wrap" data-cat="vietnamese" data-search="hàng vạn năm ánh sáng tùng dương felt piano vietnamese"><article class="card"><a class="card-thumb" href="songs/hang-van-nam-anh-sang.html"><img src="assets/hang-van-nam-anh-sang.webp" alt="Hàng Vạn Năm Ánh Sáng Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/hang-van-nam-anh-sang.html">Hàng Vạn Năm Ánh Sáng</a></h2><p class="card-artist">Tùng Dương</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1Ti9GgoRYo8GgNBr-pD5iUJcqqCrzXMys/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="songs/hang-van-nam-anh-sang.html">View Page</a></div></div></article></div><div class="card-wrap" data-cat="christmas" data-search="jingle bell rock (christmas piano) rickthepianist arrangement felt piano christmas"><article class="card"><a class="card-thumb" href="songs/jingle-bell-rock-christmas-piano.html"><img src="assets/jingle-bell-rock-christmas-piano.webp" alt="Jingle Bell Rock (Christmas Piano) Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/jingle-bell-rock-christmas-piano.html">Jingle Bell Rock (Christmas Piano)</a></h2><p class="card-artist">RickThePianist Arrangement</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1zzTxrB8yTBRlwdX9XC_O9pkdyKQkk_Up/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="songs/jingle-bell-rock-christmas-piano.html">View Page</a></div></div></article></div><div class="card-wrap" data-cat="vietnamese" data-search="như một người rưng osad x hà an huy eb minor vietnamese"><article class="card"><a class="card-thumb" href="songs/nhu-mot-nguoi-rung.html"><img src="assets/nhu-mot-nguoi-rung.webp" alt="Như Một Người Rưng Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Eb minor</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/nhu-mot-nguoi-rung.html">Như Một Người Rưng</a></h2><p class="card-artist">OSAD x Hà An Huy</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1NwfBnkpRB9vpJLNhSjQ0U5QV_5_5XBIp/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="songs/nhu-mot-nguoi-rung.html">View Page</a></div></div></article></div><div class="card-wrap" data-cat="cinema" data-search="suzume (suzume no tojimari ost) rickthepianist arrangement felt piano cinema"><article class="card"><a class="card-thumb" href="songs/suzume-suzume-no-tojimari-ost.html"><img src="assets/suzume-suzume-no-tojimari-ost.webp" alt="Suzume (Suzume no Tojimari OST) Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/suzume-suzume-no-tojimari-ost.html">Suzume (Suzume no Tojimari OST)</a></h2><p class="card-artist">RickThePianist Arrangement</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1Ewx1KQ8J2sgeaZDICfsSG064CAnT3AFf/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="songs/suzume-suzume-no-tojimari-ost.html">View Page</a></div></div></article></div><div class="card-wrap" data-cat="christmas" data-search="we wish you a merry christmas rickthepianist arrangement felt piano christmas"><article class="card"><a class="card-thumb" href="songs/we-wish-you-a-merry-christmas.html"><img src="assets/we-wish-you-a-merry-christmas.webp" alt="We Wish You a Merry Christmas Free Sheet Music PDF" loading="lazy" width="640" height="904"></a><div class="card-body"><div class="card-meta"><span class="badge">Felt Piano</span><span>FREE PDF</span></div><h2 class="card-title"><a href="songs/we-wish-you-a-merry-christmas.html">We Wish You a Merry Christmas</a></h2><p class="card-artist">RickThePianist Arrangement</p><div class="card-actions"><a class="btn btn-accent" href="https://drive.google.com/file/d/1MfhWs7YQzYsDdnLRPKjw63k2roNocwY-/view?usp=sharing" target="_blank" rel="noopener">📄 Free PDF</a><a class="btn btn-ghost" href="songs/we-wish-you-a-merry-christmas.html">View Page</a></div></div></article></div>
+    </section>
+  </main>
+
+  <footer class="seo-footer">
+    <div><strong>RickThePianist</strong> — Free Piano Sheet Music PDF Archive • <a href="https://www.youtube.com/@rickthepianist?sub_confirmation=1" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">YouTube @rickthepianist</a> • <a href="feed.xml" style="text-decoration:underline;">RSS Feed</a></div>
+    <div class="seo-langs">
+      <span>🇺🇸 Free Piano Sheet Music PDF</span>
+      <span>🇻🇳 Tải Sheet Nhạc Piano Miễn Phí PDF</span>
+      <span>🇯🇵 無料ピアノ楽譜 PDF</span>
+      <span>🇰🇷 무료 피아노 악보 PDF</span>
+      <span>🇹🇼 免費鋼琴譜 PDF</span>
+      <span>🇪🇸 Partituras Piano Gratis PDF</span>
+      <span>🇫🇷 Partition Piano Gratuite PDF</span>
+      <span>🇩🇪 Kostenlose Klaviernoten PDF</span>
+    </div>
+  </footer>
+
+  <!-- MANDATORY modern-web-guidance light-dismiss modal dialog -->
+  <dialog id="requestDialog" closedby="any" aria-labelledby="reqTitle">
+    <div class="dlg-head">
+      <h2 id="reqTitle">💬 Request Any Song for a FREE Practice Sheet</h2>
+      <button type="button" class="dlg-close" id="closeReqBtn" aria-label="Close dialog">✕</button>
+    </div>
+    <ol class="dlg-steps">
+      <li><strong>Subscribe</strong> to <a href="https://www.youtube.com/@rickthepianist?sub_confirmation=1" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">@rickthepianist on YouTube</a>.</li>
+      <li><strong>Comment</strong> your song title under any Short/Community Poll, or <strong>message/email me</strong> directly.</li>
+      <li>I'll arrange a calm, playable felt piano cover + <strong>4-page Free Sheet PDF</strong> and add it right here!</li>
+    </ol>
+    <div class="dlg-btns">
+      <a class="btn btn-cta" href="https://www.youtube.com/@rickthepianist?sub_confirmation=1" target="_blank" rel="noopener">1. Subscribe to @rickthepianist</a>
+      <a class="btn btn-accent" href="https://www.youtube.com/@rickthepianist/posts" target="_blank" rel="noopener">2. Comment Song Request on YouTube Posts</a>
+      <a class="btn btn-ghost" href="mailto:trantrunghieuvns@gmail.com?subject=Free%20Piano%20Sheet%20Request">3. Email Request (trantrunghieuvns@gmail.com)</a>
+    </div>
+  </dialog>
+
+  <script>
+    const I18N = {
+      en: {
+        kicker: "31 Free Printable A4 Piano Sheets • Updated Daily",
+        title: "100% Free Piano Sheet Music PDFs & Calm Felt Piano Tutorials",
+        desc: "Clean, playable solo felt piano arrangements with zero chaotic runs. Download every 4-page PDF free — or subscribe & message me any song you want to practice and I'll arrange a free PDF for you.",
+        sub: "🔔 Subscribe on YouTube",
+        req: "💬 Request a Free Practice Sheet",
+        ph: "Search song, artist, or key..."
+      },
+      vi: {
+        kicker: "31 Sheet Nhạc Piano A4 Miễn Phí • Cập Nhật Hằng Ngày",
+        title: "Kho Free Sheet Nhạc Piano PDF 100% Miễn Phí & Felt Piano Êm Đềm",
+        desc: "Bản phối solo felt piano êm đềm, tay trái đệm gọn dễ tập (không rải loạn nốt). Tải miễn phí toàn bộ PDF 4 trang — Subscribe kênh & nhắn tin yêu cầu bài bạn muốn tập miễn phí!",
+        sub: "🔔 Đăng Ký Kênh YouTube",
+        req: "💬 Yêu Cầu Soạn Free Sheet",
+        ph: "Tìm tên bài hát, ca sĩ hoặc giọng..."
+      },
+      ja: {
+        kicker: "31曲以上の無料ピアノ楽譜PDF • 毎日更新",
+        title: "100% 無料ピアノ楽譜 PDF & 癒しのフェルトピアノ演奏",
+        desc: "弾きやすく美しいフェルトピアノ編曲の4ページ無料PDF楽譜を配布中。チャンネル登録＆メッセージで練習したい曲を無料リクエストできます。",
+        sub: "🔔 YouTubeチャンネル登録",
+        req: "💬 無料楽譜をリクエスト",
+        ph: "曲名・アーティスト名で検索..."
+      },
+      ko: {
+        kicker: "31곡 무료 피아노 악보 PDF • 매일 업데이트",
+        title: "100% 무료 피아노 악보 PDF & 감성 펠트 피아노 커버",
+        desc: "복잡한 아르페지오 없이 깔끔하게 연주할 수 있는 무료 4페이지 PDF 악보. 구독 후 메시지로 원하는 연습곡을 무료 신청하세요!",
+        sub: "🔔 유튜브 구독하기",
+        req: "💬 무료 악보 신청하기",
+        ph: "곡명 또는 아티스트 검색..."
+      },
+      zh: {
+        kicker: "31份免費高清鋼琴譜 PDF • 每日更新",
+        title: "100% 免費鋼琴譜 PDF & 溫柔好彈 Felt Piano 教學",
+        desc: "左手伴奏乾淨、旋律溫柔的獨奏編曲，免費下載 4 頁 A4 PDF。訂閱 YouTube 頻道並私訊點歌，免費為您編製練習譜！",
+        sub: "🔔 訂閱 YouTube 頻道",
+        req: "💬 免費點歌編譜",
+        ph: "搜尋歌名或歌手..."
+      },
+      es: {
+        kicker: "31 Partituras de Piano Gratis PDF • Actualizado a diario",
+        title: "Partituras de Piano 100% Gratis PDF y Tutoriales Felt Piano",
+        desc: "Arreglos tranquilos y fáciles de practicar en PDF gratuito de 4 páginas. ¡Suscríbete y envíame un mensaje para pedir tu canción gratis!",
+        sub: "🔔 Suscribirse en YouTube",
+        req: "💬 Pedir Partitura Gratis",
+        ph: "Buscar canción o artista..."
+      },
+      fr: {
+        kicker: "31 Partitions Piano Gratuites PDF • Mis à jour chaque jour",
+        title: "Partitions Piano 100% Gratuites PDF & Tutoriels Felt Piano",
+        desc: "Arrangements doux et accessibles en PDF gratuit de 4 pages. Abonnez-vous et envoyez-moi un message pour demander votre morceau gratuitement !",
+        sub: "🔔 S'abonner sur YouTube",
+        req: "💬 Demander une Partition Gratuite",
+        ph: "Rechercher un morceau ou artiste..."
+      },
+      de: {
+        kicker: "31 Kostenlose Klaviernoten PDF • Täglich aktualisiert",
+        title: "100% Kostenlose Klaviernoten PDF & Felt Piano Tutorials",
+        desc: "Ruhige, gut spielbare Solo-Arrangements als kostenloses 4-Seiten-PDF. Abonniere & schreib mir deinen Songwunsch kostenlos!",
+        sub: "🔔 Auf YouTube abonnieren",
+        req: "💬 Kostenlose Noten anfragen",
+        ph: "Song oder Künstler suchen..."
+      }
+    };
+
+    const langSelect = document.getElementById('langSelect');
+    const applyLang = (code) => {
+      const t = I18N[code] || I18N.en;
+      document.getElementById('heroKicker').textContent = t.kicker;
+      document.getElementById('heroTitle').textContent = t.title;
+      document.getElementById('heroDesc').textContent = t.desc;
+      document.getElementById('heroSubBtn').textContent = t.sub;
+      document.getElementById('openReqBtn').textContent = t.req;
+      document.getElementById('searchInput').placeholder = t.ph;
+      document.documentElement.lang = code;
+    };
+    langSelect.addEventListener('change', () => applyLang(langSelect.value));
+    const navLang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    if (I18N[navLang]) { langSelect.value = navLang; applyLang(navLang); }
+
+    // Search + horizontal chip filter
+    let activeCat = 'all';
+    const searchInput = document.getElementById('searchInput');
+    const cards = Array.from(document.querySelectorAll('.card-wrap'));
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    const filterGrid = () => {
+      const q = searchInput.value.trim().toLowerCase();
+      for (const c of cards) {
+        const okCat = activeCat === 'all' || c.dataset.cat === activeCat;
+        const okQ = !q || c.dataset.search.includes(q);
+        c.hidden = !(okCat && okQ);
+      }
+    };
+    searchInput.addEventListener('input', filterGrid);
+    chips.forEach((ch) => ch.addEventListener('click', () => {
+      activeCat = ch.dataset.filter;
+      chips.forEach((x) => x.setAttribute('aria-pressed', String(x === ch)));
+      filterGrid();
+    }));
+
+    // Light-dismiss dialog + mandatory Safari fallback (modern-web-guidance: light-dismiss-a-dialog)
+    const dlg = document.getElementById('requestDialog');
+    document.getElementById('openReqBtn').addEventListener('click', () => dlg.showModal());
+    document.getElementById('closeReqBtn').addEventListener('click', () => dlg.close());
+    if (!('closedBy' in HTMLDialogElement.prototype)) {
+      dlg.addEventListener('click', (event) => {
+        if (event.target !== dlg) return;
+        const rect = dlg.getBoundingClientRect();
+        const isContent = (
+          rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+          rect.left <= event.clientX && event.clientX <= rect.left + rect.width
+        );
+        if (!isContent) dlg.close();
+      });
+    }
+  </script>
+</body>
+</html>
