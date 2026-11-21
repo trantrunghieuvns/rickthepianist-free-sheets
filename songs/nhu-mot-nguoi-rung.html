@@ -118,9 +118,9 @@ a { color: inherit; text-decoration: none; }
 }
 .card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06); }
 .card-thumb {
-  display: block; background: #f1f5f9; border-bottom: 1px solid var(--border); overflow: hidden;
+  display: block; background: #ffffff; border-bottom: 1px solid var(--border); overflow: hidden; padding: 8px;
 }
-.card-thumb img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; display: block; }
+.card-thumb img { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; object-position: top center; display: block; }
 .card-body { padding: 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .card-meta { display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 0.76rem; color: var(--muted); font-weight: 600; }
 .badge { background: #f1f5f9; color: var(--ink); padding: 2px 8px; border-radius: 6px; }
