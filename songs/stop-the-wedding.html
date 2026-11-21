@@ -221,6 +221,17 @@ img { display: block; max-inline-size: 100%; }
   color: #09090b;
 }
 .btn-white:hover { background: #e4e4e7; }
+/* OFFICIAL YOUTUBE RED BUTTON (Watch Tutorial -> Direct YouTube Views!) */
+.btn-youtube {
+  background: #ff0000;
+  color: #ffffff;
+  border-color: #ff0000;
+}
+.btn-youtube:hover {
+  background: #cc0000;
+  border-color: #cc0000;
+  color: #ffffff;
+}
 /* CLEAN BLACK OUTLINE SECONDARY */
 .btn-outline {
   background: transparent;
@@ -720,6 +731,69 @@ img { display: block; max-inline-size: 100%; }
   block-size: 100%;
   border: 0;
 }
+/* Click-Straight-To-YouTube Video Poster (Zero dead iframe views -> 100% direct YouTube Watch Hours & Subs!) */
+.viewer-yt-launch {
+  position: relative;
+  display: block;
+  inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  background: #000;
+  text-decoration: none;
+}
+.viewer-yt-launch img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.84);
+  transition: transform 0.22s ease, filter 0.22s ease;
+}
+.viewer-yt-launch:hover img {
+  transform: scale(1.03);
+  filter: brightness(0.96);
+}
+.viewer-yt-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.58) 100%);
+}
+.viewer-yt-play-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 74px;
+  block-size: 52px;
+  border-radius: 14px;
+  background: #ff0000;
+  color: #ffffff;
+  box-shadow: 0 10px 28px rgba(255, 0, 0, 0.45);
+  transition: transform 0.16s ease, background 0.16s ease;
+}
+.viewer-yt-launch:hover .viewer-yt-play-btn {
+  transform: scale(1.08);
+  background: #e60000;
+}
+.viewer-yt-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(9, 9, 11, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
 .viewer-aside {
   display: flex;
   flex-direction: column;
@@ -929,7 +1003,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.74); backdrop-filter: blur(3px); 
   <main class="viewer-shell">
     <section class="viewer-stage" aria-label="Sheet Music Preview">
       <div class="viewer-paper-wrap"><img src="../assets/stop-the-wedding.webp" alt="Stop The Wedding! - Ashe Free Piano Sheet Music PDF Page 1" fetchpriority="high" width="640" height="904"><div class="viewer-paper-cap"><span>Page 1 preview • Clean A4 Printable Engraving</span><span>Full 4-Page PDF Free Download</span></div></div>
-      <div class="viewer-video-box"><iframe src="https://www.youtube.com/embed/otl3619NRyY" title="Stop The Wedding! Piano Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <a class="viewer-yt-launch" href="https://youtu.be/otl3619NRyY?utm_source=rickthepianist_web&amp;utm_medium=free_sheet_hub&amp;utm_campaign=stop-the-wedding&amp;utm_content=song_page_youtube" target="_blank" rel="noopener" data-ev="click_youtube_video_card" data-song="stop-the-wedding" aria-label="Watch Stop The Wedding! Piano Tutorial on YouTube"><img src="https://i.ytimg.com/vi/otl3619NRyY/hqdefault.jpg" alt="Stop The Wedding! Piano Tutorial on YouTube" loading="lazy"><div class="viewer-yt-play"><span class="viewer-yt-play-btn"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="viewer-yt-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg> Watch Tutorial Directly on YouTube</span></div></a>
     </section>
 
     <aside class="viewer-aside" aria-label="Score Details and Download">
@@ -952,7 +1026,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.74); backdrop-filter: blur(3px); 
 
         <div class="viewer-btns">
           <a class="btn btn-white" href="https://drive.google.com/file/d/1JuuKixppiFCCdqAVgZMBgSgx5915DhUw/view?usp=sharing" target="_blank" rel="noopener" data-ev="click_free_pdf" data-song="stop-the-wedding">Download Free PDF</a>
-          <a class="btn btn-outline" href="https://youtu.be/otl3619NRyY?utm_source=rickthepianist_web&amp;utm_medium=free_sheet_hub&amp;utm_campaign=stop-the-wedding&amp;utm_content=song_page_youtube" target="_blank" rel="noopener" data-ev="click_youtube" data-song="stop-the-wedding">Watch Tutorial on YouTube</a>
+          <a class="btn btn-youtube" href="https://youtu.be/otl3619NRyY?utm_source=rickthepianist_web&amp;utm_medium=free_sheet_hub&amp;utm_campaign=stop-the-wedding&amp;utm_content=song_page_youtube" target="_blank" rel="noopener" data-ev="click_youtube" data-song="stop-the-wedding"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg> Watch Tutorial on YouTube</a>
         </div>
       </div>
 
@@ -964,7 +1038,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.74); backdrop-filter: blur(3px); 
 
       <section class="viewer-panel">
         <h2 style="margin:0;font-size:0.9rem;font-weight:800;color:var(--white);">More Free Piano Scores</h2>
-        <div class="related-list"><a class="related-item" href="training-season.html"><img class="related-mini-sheet" src="../assets/training-season.webp" alt="" loading="lazy" width="38" height="48"><div style="min-inline-size:0;"><strong style="display:block;font-size:0.82rem;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Training Season</strong><span style="font-size:0.74rem;color:var(--muted);">Dua Lipa • F minor</span></div></a><a class="related-item" href="arcade.html"><img class="related-mini-sheet" src="../assets/arcade.webp" alt="" loading="lazy" width="38" height="48"><div style="min-inline-size:0;"><strong style="display:block;font-size:0.82rem;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Arcade</strong><span style="font-size:0.74rem;color:var(--muted);">Duncan Laurence • F major</span></div></a><a class="related-item" href="babydoll.html"><img class="related-mini-sheet" src="../assets/babydoll.webp" alt="" loading="lazy" width="38" height="48"><div style="min-inline-size:0;"><strong style="display:block;font-size:0.82rem;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Babydoll</strong><span style="font-size:0.74rem;color:var(--muted);">Jamie Miller • F major</span></div></a><a class="related-item" href="die-with-a-smile.html"><img class="related-mini-sheet" src="../assets/die-with-a-smile.webp" alt="" loading="lazy" width="38" height="48"><div style="min-inline-size:0;"><strong style="display:block;font-size:0.82rem;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Die With A Smile</strong><span style="font-size:0.74rem;color:var(--muted);">Lady Gaga &amp; Bruno Mars • Felt Piano</span></div></a></div>
+        <div class="related-list"><a class="related-item" href="training-season.html"><img class="related-mini-sheet" src="../assets/training-season.webp" alt="" loading="lazy" width="38" height="48"><div style="min-inline-size:0;"><strong style="display:block;font-size:0.82rem;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Training Season</strong><span style="font-size:0.74rem;color:var(--muted);">Dua Lipa • F minor</span></div></a><a class="related-item" href="arcade.html"><img class="related-mini-sheet" src="../assets/arcade.webp" alt="" loading="lazy" width="38" height="48"><div style="min-inline-size:0;"><strong style="display:block;font-size:0.82rem;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Arcade</strong><span style="font-size:0.74rem;color:var(--muted);">Duncan Laurence • F major</span></div></a><a class="related-item" href="babydoll.html"><img class="related-mini-sheet" src="../assets/babydoll.webp" alt="" loading="lazy" width="38" height="48"><div style="min-inline-size:0;"><strong style="display:block;font-size:0.82rem;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Babydoll</strong><span style="font-size:0.74rem;color:var(--muted);">Jamie Miller • F major</span></div></a><a class="related-item" href="apt.html"><img class="related-mini-sheet" src="../assets/apt.webp" alt="" loading="lazy" width="38" height="48"><div style="min-inline-size:0;"><strong style="display:block;font-size:0.82rem;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">APT.</strong><span style="font-size:0.74rem;color:var(--muted);">ROSÉ &amp; Bruno Mars • C minor</span></div></a></div>
       </section>
     </aside>
   </main>
