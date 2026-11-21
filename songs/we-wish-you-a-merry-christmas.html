@@ -21,20 +21,21 @@
   <style>
 :root {
   color-scheme: dark;
-  --bg: #131418;
-  --bg-elev: #1b1d24;
-  --card: #1e2028;
-  --card-hover: #242731;
-  --border: #2c2f3b;
-  --border-strong: #3d4152;
-  --ink: #f2eee6;
-  --muted: #9e9a92;
-  --orange: #ea580c;
-  --orange-hover: #f97316;
-  --orange-soft: rgba(234, 88, 12, 0.16);
-  --paper: #e8e2d5;
-  --scroll-track: #16171d;
-  --scroll-thumb: #686e82;
+  --bg: #0b0b0d;
+  --surface: #131418;
+  --surface-hover: #191b20;
+  --border: #22242b;
+  --border-strong: #32353f;
+  --ink: #f2f2f3;
+  --muted: #8e929c;
+  --btn-primary: #ececef;
+  --btn-primary-hover: #ffffff;
+  --btn-primary-ink: #0b0b0d;
+  --cta-orange: #e05319;
+  --cta-orange-hover: #ea5e24;
+  --paper: #eae6dd;
+  --scroll-track: #101114;
+  --scroll-thumb: #5e6372;
   --radius: 10px;
   scrollbar-color: var(--scroll-thumb) var(--scroll-track);
 }
@@ -42,7 +43,7 @@ html {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color: var(--ink);
   background: var(--bg);
-  accent-color: var(--orange);
+  accent-color: var(--cta-orange);
 }
 @supports not (scrollbar-color: auto) {
   html { scrollbar-width: auto; }
@@ -52,212 +53,191 @@ html {
 }
 *, *::before, *::after { box-sizing: border-box; }
 body {
-  margin: 0; min-height: 100dvh; display: flex; flex-direction: column; line-height: 1.45;
+  margin: 0; min-height: 100dvh; display: flex; flex-direction: column; line-height: 1.48;
   background-color: var(--bg);
-  background-image:
-    radial-gradient(ellipse 90% 45% at 50% -10%, rgba(234, 88, 12, 0.09), transparent 70%),
-    linear-gradient(180deg, #15161b 0%, #111216 100%);
   position: relative;
 }
-/* Subtle tactile analog grain texture (anti-AI flat plastic sheen, 100% inline SVG) */
+/* Ultra-subtle matte film grain texture (100% offline SVG, zero gradients/glow) */
 body::before {
   content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 60;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-  background-size: 160px 160px; opacity: 0.055; mix-blend-mode: overlay;
+  background-size: 160px 160px; opacity: 0.038; mix-blend-mode: overlay;
 }
 a { color: inherit; text-decoration: none; }
 
-/* Compact Shopee-inspired sticky top bar */
+/* Minimal calm 54px sticky header (V1 restraint, dark monochrome) */
 .topbar {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(20, 21, 26, 0.94); backdrop-filter: blur(10px);
+  background: rgba(11, 11, 13, 0.92); backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
-  padding: 8px clamp(10px, 2.5vw, 24px);
+  padding: 0 clamp(14px, 3vw, 28px);
 }
 .topbar-inner {
-  width: min(1280px, 100%); margin: 0 auto;
-  display: flex; align-items: center; gap: 10px; flex-wrap: nowrap;
+  width: min(1240px, 100%); height: 54px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
 }
 .brand {
-  display: flex; align-items: center; gap: 7px; font-weight: 800; font-size: 0.98rem;
-  letter-spacing: -0.02em; white-space: nowrap; flex-shrink: 0; color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700; font-size: 0.98rem; letter-spacing: -0.02em;
+  white-space: nowrap; flex-shrink: 0; color: var(--ink);
 }
-.brand-mark {
-  width: 9px; height: 9px; border-radius: 2px; background: var(--orange); flex-shrink: 0;
-  transform: rotate(45deg);
-}
-.search-wrap { flex: 1; min-width: 0; }
+.top-right { display: flex; align-items: center; gap: 8px; flex: 1; justify-content: flex-end; min-width: 0; }
 .search-input {
-  width: 100%; height: 36px; padding: 0 12px;
-  border: 1px solid var(--border-strong); border-radius: 8px;
-  background: #121318; color: var(--ink); font-size: 0.88rem;
+  width: 100%; max-width: 340px; height: 34px; padding: 0 12px;
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--surface); color: var(--ink); font-size: 0.86rem;
 }
-.search-input::placeholder { color: #7a7770; }
-.search-input:focus { outline: 2px solid var(--orange); outline-offset: 0; border-color: var(--orange); }
+.search-input::placeholder { color: #676b75; }
+.search-input:focus { outline: 1px solid var(--border-strong); border-color: var(--border-strong); }
 .lang-select {
-  height: 36px; border: 1px solid var(--border); border-radius: 8px;
-  background: var(--bg-elev); color: var(--ink); padding: 0 6px; font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
+  height: 34px; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--surface); color: var(--ink); padding: 0 8px; font-size: 0.82rem; font-weight: 600; flex-shrink: 0;
 }
 .btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 5px;
-  height: 36px; padding: 0 13px; border-radius: 8px; font-size: 0.84rem; font-weight: 700;
-  border: 1px solid transparent; cursor: pointer; white-space: nowrap; transition: background 0.14s ease, border-color 0.14s ease;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  height: 35px; padding: 0 14px; border-radius: 8px; font-size: 0.84rem; font-weight: 600;
+  border: 1px solid transparent; cursor: pointer; white-space: nowrap;
+  transition: background 0.14s ease, border-color 0.14s ease, color 0.14s ease;
 }
-.btn-orange { background: var(--orange); color: #ffffff; }
-.btn-orange:hover { background: var(--orange-hover); }
-.btn-dark { background: #262934; color: var(--ink); border-color: var(--border-strong); }
-.btn-dark:hover { background: #303442; }
-.btn-sub-top { display: none; }
-@media (min-width: 720px) { .btn-sub-top { display: inline-flex; } }
+/* STRICTLY ONE accent button: Subscribe for Request Sheets */
+.btn-orange { background: var(--cta-orange); color: #ffffff; }
+.btn-orange:hover { background: var(--cta-orange-hover); }
+/* Calm monochrome card/secondary buttons (zero orange spam) */
+.btn-mono { background: var(--btn-primary); color: var(--btn-primary-ink); }
+.btn-mono:hover { background: var(--btn-primary-hover); }
+.btn-dark { background: transparent; color: #d4d6dc; border-color: var(--border-strong); }
+.btn-dark:hover { background: #1c1e24; color: #ffffff; }
 
-.shell { width: min(1280px, 100%); margin: 0 auto; padding: 12px clamp(10px, 2.5vw, 24px) 28px; flex: 1; }
+.shell { width: min(1240px, 100%); margin: 0 auto; padding: 18px clamp(14px, 3vw, 28px) 32px; flex: 1; }
 
-/* Direct, straight-to-the-point action banner (compact height so 10+ cards are immediately visible!) */
+/* Clean minimal editorial hero bar — straight to the point, ZERO glow/stripe slop */
 .direct-bar {
-  background: linear-gradient(135deg, #211d1a 0%, #1b1d24 60%, #1c1e27 100%);
-  border: 1px solid var(--border-strong); border-left: 3px solid var(--orange);
-  border-radius: var(--radius); padding: 12px 16px; margin-bottom: 12px;
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px;
+  padding: 6px 0 16px; margin-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 20px;
 }
 .direct-copy h1 {
-  margin: 0; font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.12rem, 0.96rem + 0.7vw, 1.5rem); font-weight: 700; letter-spacing: -0.015em; color: var(--ink);
+  margin: 0; font-size: clamp(1.22rem, 1.02rem + 0.85vw, 1.68rem);
+  font-weight: 700; letter-spacing: -0.025em; line-height: 1.22; color: var(--ink);
 }
-.direct-copy p { margin: 2px 0 0; font-size: 0.84rem; color: var(--muted); }
+.direct-copy p { margin: 4px 0 0; font-size: 0.88rem; color: var(--muted); max-width: 60ch; }
 .direct-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 
-/* Shopee-style horizontal single-row category strip */
+/* Single-row calm horizontal chip strip (zero emojis, crisp monochrome active state) */
 .chip-row {
   display: flex; gap: 7px; overflow-x: auto; flex-wrap: nowrap;
-  scrollbar-width: none; -ms-overflow-style: none; margin-bottom: 12px; padding-bottom: 2px;
+  scrollbar-width: none; -ms-overflow-style: none; margin-bottom: 16px; padding-bottom: 2px;
 }
 .chip-row::-webkit-scrollbar { display: none; }
 .chip {
-  flex: 0 0 auto; height: 31px; padding: 0 12px; border-radius: 6px;
-  border: 1px solid var(--border); background: var(--bg-elev); color: var(--muted);
-  font-size: 0.8rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+  flex: 0 0 auto; height: 32px; padding: 0 13px; border-radius: 999px;
+  border: 1px solid var(--border); background: transparent; color: var(--muted);
+  font-size: 0.81rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+  transition: background 0.14s ease, color 0.14s ease, border-color 0.14s ease;
 }
 .chip:hover { border-color: var(--border-strong); color: var(--ink); }
-.chip[aria-pressed="true"] { background: var(--orange-soft); color: #fdba74; border-color: var(--orange); }
+.chip[aria-pressed="true"] { background: var(--btn-primary); color: var(--btn-primary-ink); border-color: var(--btn-primary); }
 
-/* Shopee-style dense, scannable card grid: 2 columns on mobile, up to 5 columns on desktop! */
+/* Compact scannable grid: 2 columns on mobile (Shopee-easy reading), 4 clean columns on desktop */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 12px;
 }
-@media (min-width: 680px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; } }
-@media (min-width: 960px) { .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; } }
-@media (min-width: 1180px) { .grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; } }
+@media (min-width: 720px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; } }
+@media (min-width: 1040px) { .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; } }
 
 .card-wrap { container-type: inline-size; }
 .card {
-  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   overflow: hidden; display: flex; flex-direction: column; height: 100%;
-  transition: transform 0.14s ease, border-color 0.14s ease, background 0.14s ease;
+  transition: border-color 0.14s ease, background 0.14s ease;
 }
-.card:hover { transform: translateY(-2px); border-color: rgba(234, 88, 12, 0.55); background: var(--card-hover); }
+.card:hover { border-color: var(--border-strong); background: var(--surface-hover); }
 
 .card-media {
-  position: relative; display: block; aspect-ratio: 16 / 10; background: #14151b; overflow: hidden;
+  position: relative; display: block; aspect-ratio: 16 / 10; background: #0d0e11; overflow: hidden;
   border-bottom: 1px solid var(--border);
 }
 .card-media img {
   width: 100%; height: 100%; object-fit: cover; display: block;
-  filter: brightness(0.92) contrast(1.04);
-}
-.card-media::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(180deg, rgba(15,16,20,0.08) 0%, rgba(15,16,20,0.52) 100%);
-}
-.tag-free {
-  position: absolute; top: 7px; left: 7px; z-index: 2;
-  background: var(--orange); color: #ffffff; font-size: 0.66rem; font-weight: 800;
-  padding: 2px 6px; border-radius: 4px; letter-spacing: 0.03em; text-transform: uppercase;
 }
 .tag-key {
-  position: absolute; bottom: 6px; right: 7px; z-index: 2;
-  background: rgba(15, 16, 22, 0.82); color: #e7e2d8; font-size: 0.68rem; font-weight: 600;
-  padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12);
+  position: absolute; bottom: 7px; right: 7px; z-index: 2;
+  background: rgba(11, 11, 13, 0.78); color: #d8d9de; font-size: 0.69rem; font-weight: 500;
+  padding: 2px 7px; border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.card-body { padding: 9px 10px 10px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.card-body { padding: 11px 12px 12px; display: flex; flex-direction: column; gap: 3px; flex: 1; }
 .card-title {
-  margin: 0; font-size: 0.88rem; font-weight: 700; line-height: 1.28; color: var(--ink);
+  margin: 0; font-size: 0.92rem; font-weight: 600; line-height: 1.3; color: var(--ink);
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-  min-height: 2.25em;
+  min-height: 2.35em;
 }
 .card-artist {
-  margin: 0; font-size: 0.75rem; color: var(--muted);
+  margin: 0; font-size: 0.78rem; color: var(--muted);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .card-actions {
-  margin-top: auto; padding-top: 7px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+  margin-top: auto; padding-top: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 7px;
 }
-@container (max-width: 175px) {
+@container (max-width: 185px) {
   .card-actions { grid-template-columns: 1fr; }
 }
-.card-actions .btn { height: 29px; font-size: 0.75rem; padding: 0 6px; border-radius: 6px; }
+.card-actions .btn { height: 31px; font-size: 0.77rem; padding: 0 8px; border-radius: 7px; }
 
-/* Detail page warm-parchment sheet frame (never glaring stark white!) */
+/* Detail page warm-parchment sheet frame (soft contrast on dark canvas) */
 .sheet-paper-frame {
   background: var(--paper); padding: 10px; border-radius: 10px; border: 1px solid var(--border-strong);
-  max-width: 540px; margin: 16px auto;
+  max-width: 540px; margin: 18px auto;
 }
 .sheet-paper-frame img {
   width: 100%; height: auto; aspect-ratio: 210 / 297; display: block; border-radius: 6px;
-  filter: sepia(0.08) brightness(0.96) contrast(1.04);
 }
 
 .seo-footer {
-  margin-top: 28px; padding: 20px 16px 26px; background: #16171d; border-top: 1px solid var(--border);
+  margin-top: 32px; padding: 24px 16px 30px; background: #0e0f12; border-top: 1px solid var(--border);
   font-size: 0.8rem; color: var(--muted);
 }
-.seo-wrap { width: min(1280px, 100%); margin: 0 auto; }
+.seo-wrap { width: min(1240px, 100%); margin: 0 auto; }
 .seo-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;
-  margin-bottom: 16px; text-align: left;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;
+  margin-bottom: 18px; text-align: left;
 }
 .seo-box {
-  background: #1b1d24; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px;
 }
-.seo-box h2, .seo-box h3 {
-  margin: 0 0 6px; font-size: 0.86rem; color: var(--ink); font-family: Georgia, "Times New Roman", serif;
-}
-.seo-box p { margin: 0; font-size: 0.77rem; line-height: 1.5; color: var(--muted); }
-.seo-tags {
-  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;
-}
+.seo-box h2, .seo-box h3 { margin: 0 0 6px; font-size: 0.86rem; color: var(--ink); font-weight: 600; }
+.seo-box p { margin: 0; font-size: 0.78rem; line-height: 1.55; color: var(--muted); }
+.seo-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .seo-tag {
-  background: #131418; border: 1px solid var(--border); border-radius: 5px;
-  padding: 2px 7px; font-size: 0.72rem; color: #b5b0a6; cursor: pointer;
+  background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+  padding: 3px 8px; font-size: 0.73rem; color: #b5b8c0; cursor: pointer;
 }
-.seo-tag:hover { border-color: var(--orange); color: #fdba74; }
+.seo-tag:hover { border-color: var(--border-strong); color: var(--ink); }
 .seo-faq details {
-  background: #1b1d24; border: 1px solid var(--border); border-radius: 8px;
-  padding: 8px 12px; margin-bottom: 8px; text-align: left;
+  border-top: 1px solid var(--border); padding: 8px 0; text-align: left;
 }
-.seo-faq summary { cursor: pointer; font-weight: 700; font-size: 0.82rem; color: var(--ink); }
+.seo-faq details:first-of-type { border-top: 0; padding-top: 2px; }
+.seo-faq summary { cursor: pointer; font-weight: 600; font-size: 0.81rem; color: var(--ink); }
 .seo-faq details p { margin: 6px 0 0; font-size: 0.78rem; color: var(--muted); }
-.seo-langs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; margin: 10px auto 0; max-width: 1080px; font-size: 0.75rem; color: #848078; text-align: center; }
+.seo-langs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; margin: 12px auto 0; max-width: 1080px; font-size: 0.74rem; color: #6e727c; text-align: center; }
 .related-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-top: 12px;
 }
 .related-card {
   display: block; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px;
 }
-.related-card:hover { border-color: var(--orange); }
+.related-card:hover { border-color: var(--border-strong); }
 
 dialog {
   width: min(460px, calc(100dvw - 24px)); border: 1px solid var(--border-strong); border-radius: 14px;
-  padding: 20px; background: var(--bg-elev); color: var(--ink); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+  padding: 22px; background: var(--surface); color: var(--ink); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.72);
 }
-dialog::backdrop { background: rgba(8, 9, 12, 0.72); backdrop-filter: blur(3px); }
-.dlg-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
-.dlg-head h2 { margin: 0; font-size: 1.05rem; font-family: Georgia, "Times New Roman", serif; }
-.dlg-close { width: 30px; height: 30px; border-radius: 7px; border: 1px solid var(--border-strong); background: var(--bg); color: var(--ink); cursor: pointer; font-weight: 700; }
-.dlg-steps { margin: 0 0 14px; padding-left: 18px; color: var(--muted); font-size: 0.88rem; }
+dialog::backdrop { background: rgba(0, 0, 0, 0.72); backdrop-filter: blur(3px); }
+.dlg-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.dlg-head h2 { margin: 0; font-size: 1.05rem; font-weight: 700; letter-spacing: -0.015em; }
+.dlg-close { width: 30px; height: 30px; border-radius: 7px; border: 1px solid var(--border-strong); background: var(--bg); color: var(--ink); cursor: pointer; font-weight: 600; }
+.dlg-steps { margin: 0 0 16px; padding-left: 18px; color: var(--muted); font-size: 0.88rem; }
 .dlg-steps li { margin-bottom: 6px; }
 .dlg-btns { display: flex; flex-direction: column; gap: 8px; }
 </style>
@@ -267,40 +247,40 @@ dialog::backdrop { background: rgba(8, 9, 12, 0.72); backdrop-filter: blur(3px);
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="../index.html"><span class="brand-mark"></span>RickThePianist</a>
-      <div style="flex:1;"></div>
-      <a class="btn btn-dark" href="../index.html">← All Sheets</a>
-      <a class="btn btn-orange" href="https://www.youtube.com/@rickthepianist?sub_confirmation=1&utm_source=rickthepianist_web&utm_medium=free_sheet_hub&utm_campaign=subscribe_for_request_sheets" target="_blank" rel="noopener">🔔 Subscribe for Request Sheets</a>
+      <a class="brand" href="../index.html">RickThePianist</a>
+      <div class="top-right">
+        <a class="btn btn-dark" href="../index.html">← All Sheets</a>
+      </div>
     </div>
   </header>
-  <main class="shell" style="max-width:860px;">
-    <article style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(14px,3vw,26px);">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-        <span style="background:var(--orange);color:#fff;font-size:0.7rem;font-weight:800;padding:2px 8px;border-radius:4px;">FREE SHEET PDF</span>
-        <span style="color:var(--muted);font-size:0.8rem;font-weight:600;">Felt Piano</span>
+  <main class="shell" style="max-width:840px;">
+    <article style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(16px,3vw,28px);">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <span style="background:var(--bg);border:1px solid var(--border-strong);color:var(--ink);font-size:0.72rem;font-weight:600;padding:2px 8px;border-radius:5px;">Free Sheet PDF</span>
+        <span style="color:var(--muted);font-size:0.8rem;font-weight:500;">Felt Piano</span>
       </div>
-      <h1 style="margin:0 0 6px;font-family:Georgia,serif;font-size:clamp(1.3rem,1.05rem + 1.1vw,1.95rem);">We Wish You a Merry Christmas — RickThePianist (Free Piano Sheet PDF)</h1>
-      <p style="color:var(--muted);margin:0 0 14px;font-size:0.9rem;">Calm, playable felt piano arrangement by <strong>RickThePianist</strong>. Free 4-page printable A4 PDF below — zero paywall, zero login.</p>
+      <h1 style="margin:0 0 6px;font-size:clamp(1.3rem,1.05rem + 1.0vw,1.9rem);letter-spacing:-0.025em;">We Wish You a Merry Christmas — RickThePianist</h1>
+      <p style="color:var(--muted);margin:0 0 16px;font-size:0.9rem;">Calm, playable felt piano arrangement by <strong>RickThePianist</strong>. Printable 4-page A4 PDF — no signup required.</p>
       <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <a class="btn btn-orange" href="https://drive.google.com/file/d/1MfhWs7YQzYsDdnLRPKjw63k2roNocwY-/view?usp=sharing" target="_blank" rel="noopener" data-ev="click_free_pdf" data-song="we-wish-you-a-merry-christmas">📄 Download Free PDF</a>
+        <a class="btn btn-mono" href="https://drive.google.com/file/d/1MfhWs7YQzYsDdnLRPKjw63k2roNocwY-/view?usp=sharing" target="_blank" rel="noopener" data-ev="click_free_pdf" data-song="we-wish-you-a-merry-christmas">Download Free PDF</a>
         
-        <a class="btn btn-orange" style="background:#c2410c;" href="https://www.youtube.com/@rickthepianist?sub_confirmation=1&utm_source=rickthepianist_web&utm_medium=free_sheet_hub&utm_campaign=subscribe_for_request_sheets" target="_blank" rel="noopener" data-ev="click_subscribe_request" data-song="we-wish-you-a-merry-christmas">🔔 Subscribe for Request Sheets</a>
+        <a class="btn btn-orange" href="https://www.youtube.com/@rickthepianist?sub_confirmation=1&utm_source=rickthepianist_web&utm_medium=free_sheet_hub&utm_campaign=subscribe_for_request_sheets" target="_blank" rel="noopener" data-ev="click_subscribe_request" data-song="we-wish-you-a-merry-christmas">Subscribe for Request Sheets</a>
       </div>
       
       <div class="sheet-paper-frame"><img src="../assets/we-wish-you-a-merry-christmas.webp" alt="We Wish You a Merry Christmas - RickThePianist Free Piano Sheet Music PDF Page 1" fetchpriority="high" width="640" height="904"></div>
-      <section style="margin-top:18px;padding:14px;background:var(--bg);border:1px solid var(--border);border-left:3px solid var(--orange);border-radius:8px;">
-        <strong style="display:block;margin-bottom:4px;">💬 Need a FREE practice sheet for another song?</strong>
-        <p style="margin:0 0 10px;color:var(--muted);font-size:0.86rem;">Subscribe to <strong>@rickthepianist</strong> &amp; comment or email <a href="mailto:trantrunghieuvns@gmail.com" style="color:#fdba74;text-decoration:underline;">trantrunghieuvns@gmail.com</a> — free arrangements every week.</p>
-        <a class="btn btn-orange" href="https://www.youtube.com/@rickthepianist?sub_confirmation=1&utm_source=rickthepianist_web&utm_medium=free_sheet_hub&utm_campaign=subscribe_for_request_sheets" target="_blank" rel="noopener">🔔 Subscribe for Request Sheets</a>
+      <section style="margin-top:20px;padding:16px;background:var(--bg);border:1px solid var(--border);border-radius:8px;">
+        <strong style="display:block;margin-bottom:4px;font-size:0.92rem;">Need a free practice sheet for another song?</strong>
+        <p style="margin:0 0 12px;color:var(--muted);font-size:0.85rem;">Subscribe to <strong>@rickthepianist</strong> and comment or email <a href="mailto:trantrunghieuvns@gmail.com" style="color:var(--ink);text-decoration:underline;">trantrunghieuvns@gmail.com</a> — free arrangements added weekly.</p>
+        <a class="btn btn-dark" href="https://www.youtube.com/@rickthepianist?sub_confirmation=1&utm_source=rickthepianist_web&utm_medium=free_sheet_hub&utm_campaign=subscribe_for_request_sheets" target="_blank" rel="noopener">Open @rickthepianist on YouTube</a>
       </section>
-      <section style="margin-top:18px;">
-        <h2 style="margin:0;font-size:0.94rem;font-family:Georgia,serif;color:var(--ink);">More Free Piano Sheet Music PDFs</h2>
+      <section style="margin-top:20px;">
+        <h2 style="margin:0;font-size:0.92rem;font-weight:600;color:var(--ink);">More Free Piano Sheet Music PDFs</h2>
         <div class="related-grid"><a class="related-card" href="snowman.html"><strong style="display:block;font-size:0.84rem;color:var(--ink);">Snowman</strong><span style="font-size:0.74rem;color:var(--muted);">Sia • Free PDF</span></a><a class="related-card" href="last-christmas.html"><strong style="display:block;font-size:0.84rem;color:var(--ink);">Last Christmas</strong><span style="font-size:0.74rem;color:var(--muted);">George Michael / Wham! (Holiday Classic) • Free PDF</span></a><a class="related-card" href="all-i-want-for-christmas-is-you.html"><strong style="display:block;font-size:0.84rem;color:var(--ink);">All I Want For Christmas Is You</strong><span style="font-size:0.74rem;color:var(--muted);">Mariah Carey (Holiday Anthem) • Free PDF</span></a></div>
       </section>
     </article>
   </main>
   <footer class="seo-footer" style="text-align:center;">
-    © 2026 RickThePianist • <a href="../index.html" style="color:#fdba74;text-decoration:underline;">Browse All Free Piano Sheet PDFs</a>
+    © 2026 RickThePianist • <a href="../index.html" style="color:var(--ink);text-decoration:underline;">Browse All Free Piano Sheet PDFs</a>
   </footer>
   <script>
     document.querySelectorAll('[data-ev]').forEach(el => el.addEventListener('click', () => {
