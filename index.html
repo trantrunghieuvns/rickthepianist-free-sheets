@@ -73,16 +73,21 @@ img { display: block; max-inline-size: 100%; }
   inline-size: min(1440px, 100%);
   min-block-size: 64px;
   margin-inline: auto;
-  padding-inline: clamp(12px, 2vw, 28px);
-  display: flex;
+  padding: 10px clamp(12px, 2vw, 28px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "brand actions"
+    "search search";
   align-items: center;
-  gap: 14px;
+  gap: 10px 12px;
 }
 .brand-link {
+  grid-area: brand;
   display: flex;
   align-items: center;
   gap: 9px;
-  flex-shrink: 0;
+  min-inline-size: 0;
 }
 .brand-text {
   display: flex;
@@ -102,10 +107,38 @@ img { display: block; max-inline-size: 100%; }
   letter-spacing: 0.01em;
 }
 .ms-search-wrap {
+  grid-area: search;
   position: relative;
-  flex: 1 1 320px;
-  max-inline-size: 460px;
+  inline-size: 100%;
   min-inline-size: 0;
+}
+.ms-nav {
+  grid-area: nav;
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+.ms-header-actions {
+  grid-area: actions;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-self: end;
+}
+@media (min-width: 760px) {
+  .ms-header-inner {
+    padding-block: 0;
+    grid-template-columns: auto minmax(220px, 440px) minmax(0, 1fr);
+    grid-template-areas: "brand search actions";
+    gap: 14px;
+  }
+}
+@media (min-width: 1100px) {
+  .ms-header-inner {
+    grid-template-columns: auto minmax(260px, 440px) auto minmax(0, 1fr);
+    grid-template-areas: "brand search nav actions";
+  }
+  .ms-nav { display: flex; }
 }
 .ms-search-input {
   inline-size: 100%;
@@ -132,15 +165,6 @@ img { display: block; max-inline-size: 100%; }
   color: var(--muted);
   pointer-events: none;
 }
-.ms-nav {
-  display: none;
-  align-items: center;
-  gap: 4px;
-  margin-inline-start: 4px;
-}
-@media (min-width: 1080px) {
-  .ms-nav { display: flex; }
-}
 .ms-nav-btn {
   background: transparent;
   border: 0;
@@ -156,13 +180,6 @@ img { display: block; max-inline-size: 100%; }
 .ms-nav-btn:hover, .ms-nav-btn[aria-current="true"] {
   color: var(--white);
   background: var(--surface-2);
-}
-.ms-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-inline-start: auto;
-  flex-shrink: 0;
 }
 .lang-select {
   block-size: 36px;
@@ -597,17 +614,16 @@ img { display: block; max-inline-size: 100%; }
 }
 
 .score-title {
-  margin: 0 0 3px;
+  margin: 0 0 2px;
   font-size: 0.91rem;
   font-weight: 700;
-  line-height: 1.28;
+  line-height: 1.26;
   color: var(--white);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   line-clamp: 2;
   overflow: clip;
-  min-block-size: 2.56em;
 }
 .score-artist {
   margin: 0 0 4px;
