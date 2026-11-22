@@ -1,0 +1,1689 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Free Printable Blank Piano Sheet Music PDF Generator (US Letter &amp; A4) | RickThePianist</title>
+  <meta name="description" content="Download free US Letter &amp; A4 printable blank piano sheet music PDF (grand staff paper). Customize 4, 5, or 6 grand staves per page, add a title, and download razor-sharp vector PDFs instantly.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://trantrunghieuvns.github.io/rickthepianist-free-sheets/tools/blank-piano-sheet-music-pdf.html">
+  <meta property="og:title" content="Free Printable Blank Piano Sheet Music PDF Generator (US Letter &amp; A4)">
+  <meta property="og:description" content="Instant vector US Letter &amp; A4 printable blank piano grand staff manuscript paper PDF—zero signup, customizable title and spacing.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://trantrunghieuvns.github.io/rickthepianist-free-sheets/tools/blank-piano-sheet-music-pdf.html">
+  <style>
+:root {
+  color-scheme: dark;
+  --bg: #09090b;
+  --surface: #121215;
+  --surface-2: #18181d;
+  --border: #23232a;
+  --border-strong: #353540;
+  --white: #ffffff;
+  --ink: #f4f4f6;
+  --muted: #a1a1aa;
+  --muted-2: #71717a;
+  --orange: #f97316;
+  --orange-hover: #ea580c;
+  --orange-ink: #ffffff;
+  --scroll-track: #0d0d10;
+  --scroll-thumb: #3f3f4a;
+  --radius: 10px;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  accent-color: var(--orange);
+  scrollbar-gutter: stable;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-block-size: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; }
+img { display: block; max-inline-size: 100%; }
+
+/* 1. MuseScore-Style 64px Sticky Header (Pure Black + Crisp White + Single Orange Subscribe Pill) */
+.ms-header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-block-end: 1px solid var(--border);
+}
+.ms-header-inner {
+  inline-size: min(1440px, 100%);
+  min-block-size: 64px;
+  margin-inline: auto;
+  padding: 10px clamp(12px, 2vw, 28px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "brand actions"
+    "search search";
+  align-items: center;
+  gap: 10px 12px;
+}
+.brand-link {
+  grid-area: brand;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-inline-size: 0;
+}
+.brand-icon {
+  flex-shrink: 0;
+  inline-size: 28px;
+  block-size: 28px;
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  min-inline-size: 0;
+}
+.brand-name {
+  font-size: 1.02rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--white);
+}
+.brand-sub {
+  font-size: 0.67rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+.ms-search-wrap {
+  grid-area: search;
+  position: relative;
+  inline-size: 100%;
+  min-inline-size: 0;
+}
+.ms-nav {
+  grid-area: nav;
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+.ms-header-actions {
+  grid-area: actions;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-self: end;
+}
+@media (max-width: 480px) {
+  .ms-header-inner { gap: 10px 8px; }
+  .brand-link { gap: 7px; }
+  .brand-name { font-size: 0.9rem; }
+  .brand-sub { font-size: 0.63rem; }
+  .lang-select { padding-inline: 7px; font-size: 0.74rem; }
+  .ms-header-actions { gap: 6px; }
+  .ms-header-actions .btn { padding-inline: 10px; font-size: 0.75rem; gap: 5px; }
+}
+@media (min-width: 760px) {
+  .ms-header-inner {
+    padding-block: 0;
+    grid-template-columns: auto minmax(220px, 440px) minmax(0, 1fr);
+    grid-template-areas: "brand search actions";
+    gap: 14px;
+  }
+}
+@media (min-width: 1100px) {
+  .ms-header-inner {
+    grid-template-columns: auto minmax(260px, 440px) auto minmax(0, 1fr);
+    grid-template-areas: "brand search nav actions";
+  }
+  .ms-nav { display: flex; }
+}
+.ms-search-input {
+  inline-size: 100%;
+  block-size: 40px;
+  padding-inline: 16px 40px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--white);
+  font-size: 0.87rem;
+  transition: border-color 0.14s ease, background 0.14s ease;
+}
+.ms-search-input::placeholder { color: var(--muted-2); }
+.ms-search-input:focus {
+  outline: none;
+  border-color: var(--white);
+  background: var(--surface-2);
+}
+.search-ico {
+  position: absolute;
+  inset-inline-end: 14px;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+.ms-nav-btn {
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.14s ease, background 0.14s ease;
+}
+.ms-nav-btn:hover, .ms-nav-btn[aria-current="true"] {
+  color: var(--white);
+  background: var(--surface-2);
+}
+.lang-select {
+  block-size: 36px;
+  padding-inline: 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Buttons — Strict B/W/Orange Hierarchy */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  block-size: 38px;
+  padding-inline: 16px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.14s ease, color 0.14s ease, border-color 0.14s ease, transform 0.1s ease;
+}
+.btn:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
+/* ORANGE STRICTLY RESERVED FOR SUBSCRIBE CTA */
+.btn-subscribe {
+  background: var(--orange);
+  color: var(--orange-ink);
+}
+.btn-subscribe:hover { background: var(--orange-hover); }
+/* CRISP WHITE PRIMARY (Download PDF) */
+.btn-white {
+  background: var(--white);
+  color: #09090b;
+}
+.btn-white:hover { background: #e4e4e7; }
+/* SLEEK GREY YOUTUBE WATCH BUTTON WITH OFFICIAL RED YOUTUBE LOGO ([BLACK-149]) */
+.btn-youtube {
+  background: #2b2f36;
+  color: #f4f4f5;
+  border-color: #424752;
+}
+.btn-youtube:hover {
+  background: #3a404a;
+  border-color: #6b7280;
+  color: #ffffff;
+}
+/* LUXURY CHAMPAGNE-GOLD COFFEE SUPPORT BUTTON ([BLACK-128]) */
+.btn-coffee {
+  background: #1a150e;
+  color: #f6dfa4;
+  border-color: #c8a253;
+}
+.btn-coffee:hover {
+  background: #292014;
+  border-color: #eec672;
+  color: #fff4d2;
+}
+.sidebar-coffee-box {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(238, 198, 114, 0.35);
+  background: linear-gradient(180deg, rgba(32, 25, 14, 0.9), rgba(16, 14, 12, 0.95));
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sidebar-coffee-box strong { color: #f6dfa4; font-size: 0.88rem; }
+.sidebar-coffee-box p { margin: 0; font-size: 0.78rem; color: var(--muted); line-height: 1.45; }
+.coffee-sub-link { font-size: 0.76rem; color: #d8c394; text-decoration: underline; text-align: center; }
+.coffee-sub-link:hover { color: #fff4d2; }
+/* CLEAN BLACK OUTLINE SECONDARY */
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--border-strong);
+}
+.btn-outline:hover {
+  border-color: var(--white);
+  color: var(--white);
+  background: var(--surface-2);
+}
+
+/* 2. MuseScore Two-Column Page Shell (Left Filters Sidebar + Right Catalog Main) */
+.ms-shell {
+  inline-size: min(1440px, 100%);
+  margin-inline: auto;
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 960px) {
+  .ms-shell {
+    grid-template-columns: 244px minmax(0, 1fr);
+  }
+}
+
+/* Left Sidebar — MuseScore Filters Architecture */
+.ms-sidebar {
+  display: none;
+  border-inline-end: 1px solid var(--border);
+  background: #0c0c0f;
+  padding: 22px 18px 32px;
+}
+@media (min-width: 960px) {
+  .ms-sidebar {
+    display: block;
+    position: sticky;
+    inset-block-start: 64px;
+    max-block-size: calc(100dvh - 64px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+.sidebar-h {
+  margin: 0 0 18px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+.filter-group {
+  margin-block-end: 20px;
+  padding-block-end: 18px;
+  border-block-end: 1px solid var(--border);
+}
+.filter-group:last-of-type { border-block-end: 0; }
+.filter-group-title {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.filter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  inline-size: 100%;
+  padding: 6px 8px;
+  border-radius: 7px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: start;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.filter-row:hover { background: var(--surface-2); }
+.filter-box {
+  inline-size: 15px;
+  block-size: 15px;
+  border-radius: 4px;
+  border: 1.5px solid var(--border-strong);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.filter-row[aria-pressed="true"] {
+  background: var(--surface-2);
+  color: var(--white);
+  font-weight: 700;
+}
+.filter-row[aria-pressed="true"] .filter-box {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+.filter-row[aria-pressed="true"] .filter-box::after {
+  content: "";
+  inline-size: 5px;
+  block-size: 8px;
+  border-inline-end: 2px solid #ffffff;
+  border-block-end: 2px solid #ffffff;
+  transform: rotate(40deg) translateY(-1px);
+}
+.filter-count {
+  margin-inline-start: auto;
+  font-size: 0.76rem;
+  color: var(--muted-2);
+  font-variant-numeric: tabular-nums;
+}
+.sidebar-req-box {
+  margin-block-start: 10px;
+  padding: 14px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.sidebar-req-box strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--white);
+  margin-block-end: 4px;
+}
+.sidebar-req-box p {
+  margin: 0 0 10px;
+  font-size: 0.77rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.sidebar-req-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--white);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.sidebar-req-link:hover { color: var(--orange); }
+
+/* Right Main Column */
+.ms-main {
+  padding: clamp(16px, 2.2vw, 28px);
+  min-inline-size: 0;
+}
+
+/* MuseScore Top Hero Banner — Strictly Black / White / Orange Subscribe Conversion Strip */
+.ms-hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: clamp(16px, 2vw, 22px) clamp(18px, 2.5vw, 28px);
+  margin-block-end: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+}
+.ms-hero-copy { max-inline-size: 62ch; }
+.ms-hero-kicker {
+  display: inline-block;
+  font-size: 0.71rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-block-end: 5px;
+}
+.ms-hero h1 {
+  margin: 0;
+  font-size: clamp(1.3rem, 1.05rem + 1.05vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--white);
+}
+.ms-hero p {
+  margin: 6px 0 0;
+  font-size: 0.89rem;
+  color: var(--muted);
+}
+.ms-hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+@media (min-width: 720px) {
+  .ms-hero-cta { align-items: flex-end; }
+}
+.ms-hero-cta .btn-subscribe {
+  block-size: 42px;
+  padding-inline: 22px;
+  font-size: 0.88rem;
+}
+.ms-hero-note {
+  font-size: 0.75rem;
+  color: var(--muted-2);
+}
+
+/* Mobile Horizontal Filter Strip (visible < 960px) */
+.mobile-chips {
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin-block-end: 14px;
+  padding-block-end: 2px;
+}
+.mobile-chips::-webkit-scrollbar { display: none; }
+@media (min-width: 960px) { .mobile-chips { display: none; } }
+.m-chip {
+  flex: 0 0 auto;
+  block-size: 33px;
+  padding-inline: 13px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.m-chip[aria-pressed="true"] {
+  background: var(--white);
+  color: #09090b;
+  border-color: var(--white);
+}
+
+/* Catalog Section Header & Sort Bar */
+.catalog-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-block-end: 16px;
+}
+.catalog-heading-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.catalog-heading {
+  margin: 0;
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--white);
+}
+.catalog-count {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.sort-select {
+  block-size: 34px;
+  padding-inline: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.81rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 3. MuseScore-Style Sheet Music Catalog Grid + Subgrid Alignment (modern-web-guidance: css-layout & card) */
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 14px;
+}
+@media (min-width: 680px) {
+  .score-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px 16px; }
+}
+@media (min-width: 1120px) {
+  .score-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px 18px; }
+}
+@media (min-width: 1360px) {
+  .score-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px 18px; }
+}
+
+/* Individual MuseScore Card — Stretched Link Pattern + Crisp White Sheet Preview + Small Square Artist Portrait */
+[hidden] { display: none !important; }
+.score-card[hidden] { display: none !important; }
+.score-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  container: score-card / inline-size;
+  border-radius: 10px;
+  transition: transform 0.14s ease;
+}
+.score-card:has(a.card-link:hover) .sheet-frame {
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+.score-card:has(a.card-link:focus-visible) {
+  outline: 2px solid var(--white);
+  outline-offset: 4px;
+}
+.score-card a.card-link:focus-visible { outline: none; }
+.score-card a.card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+/* Elevate independent footer controls above stretched link (modern-web-guidance: card) */
+.score-card a:not(.card-link),
+.score-card button {
+  position: relative;
+  z-index: 1;
+}
+
+/* Component-specific light paper surface inside dark page (modern-web-guidance: component-specific-light-dark-theme) */
+.sheet-frame {
+  color-scheme: only light;
+  position: relative;
+  aspect-ratio: 3 / 3.7;
+  background: #ffffff;
+  color: #09090b;
+  border-radius: 9px;
+  border: 1.5px solid var(--border-strong);
+  overflow: clip;
+  margin-block-end: 10px;
+  transition: border-color 0.14s ease, transform 0.14s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.42);
+}
+.sheet-img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+/* Small Square Author/Artist Portrait inside corner of Sheet Thumbnail (User Mandate) */
+.artist-square {
+  position: absolute;
+  inset-inline-start: 8px;
+  inset-block-end: 8px;
+  inline-size: 40px;
+  block-size: 40px;
+  border-radius: 7px;
+  overflow: clip;
+  border: 2px solid #ffffff;
+  background: #121215;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+}
+.artist-square img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+/* Clean Monochrome Key/PDF Tag in MuseScore's exact bottom-right position */
+.sheet-pill {
+  position: absolute;
+  inset-inline-end: 8px;
+  inset-block-end: 8px;
+  background: rgba(9, 9, 11, 0.90);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 3px 7px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  max-inline-size: calc(100% - 64px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.score-title {
+  margin: 0 0 2px;
+  font-size: 0.91rem;
+  font-weight: 700;
+  line-height: 1.26;
+  color: var(--white);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  overflow: clip;
+}
+.score-artist {
+  margin: 0 0 4px;
+  font-size: 0.79rem;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.score-meta {
+  margin: 0 0 10px;
+  font-size: 0.72rem;
+  color: var(--muted-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.score-footer {
+  margin-block-start: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+@container score-card (inline-size < 175px) {
+  .score-footer { grid-template-columns: 1fr; }
+}
+.score-footer .btn {
+  block-size: 31px;
+  padding-inline: 8px;
+  border-radius: 7px;
+  font-size: 0.75rem;
+}
+
+/* 4. MuseScore 2-Column Score Viewer Detail Page */
+.viewer-shell {
+  inline-size: min(1320px, 100%);
+  margin-inline: auto;
+  padding: clamp(16px, 2.5vw, 30px);
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+@media (min-width: 960px) {
+  .viewer-shell { grid-template-columns: minmax(0, 1fr) 356px; }
+}
+.viewer-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-inline-size: 0;
+}
+.viewer-paper-wrap {
+  color-scheme: only light;
+  background: #ffffff;
+  color: #09090b;
+  border-radius: 12px;
+  border: 1px solid var(--border-strong);
+  padding: clamp(10px, 1.8vw, 22px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+}
+.viewer-paper-wrap img {
+  inline-size: 100%;
+  block-size: auto;
+  max-inline-size: 740px;
+  margin-inline: auto;
+  aspect-ratio: 210 / 297;
+  border-radius: 4px;
+}
+.viewer-paper-cap {
+  margin-block-start: 12px;
+  padding-block-start: 10px;
+  border-block-start: 1px solid #e4e4e7;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #52525b;
+}
+.viewer-video-box {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000000;
+}
+.viewer-video-box iframe {
+  inline-size: 100%;
+  block-size: 100%;
+  border: 0;
+}
+/* Click-Straight-To-YouTube Video Poster (Zero dead iframe views -> 100% direct YouTube Watch Hours & Subs!) */
+.viewer-yt-launch {
+  position: relative;
+  display: block;
+  inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  background: #000;
+  text-decoration: none;
+}
+.viewer-yt-launch img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.84);
+  transition: transform 0.22s ease, filter 0.22s ease;
+}
+.viewer-yt-launch:hover img {
+  transform: scale(1.03);
+  filter: brightness(0.96);
+}
+.viewer-yt-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.58) 100%);
+}
+.viewer-yt-play-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 74px;
+  block-size: 52px;
+  border-radius: 14px;
+  background: #ff0000;
+  color: #ffffff;
+  box-shadow: 0 10px 28px rgba(255, 0, 0, 0.45);
+  transition: transform 0.16s ease, background 0.16s ease;
+}
+.viewer-yt-launch:hover .viewer-yt-play-btn {
+  transform: scale(1.08);
+  background: #e60000;
+}
+.viewer-yt-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(9, 9, 11, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.viewer-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+@media (min-width: 960px) {
+  .viewer-aside { position: sticky; inset-block-start: 84px; }
+}
+.viewer-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+.viewer-author-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-block-end: 14px;
+}
+.viewer-author-img {
+  inline-size: 52px;
+  block-size: 52px;
+  border-radius: 9px;
+  object-fit: cover;
+  object-position: center 20%;
+  border: 1.5px solid var(--white);
+  flex-shrink: 0;
+}
+.viewer-h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: var(--white);
+}
+.viewer-artist {
+  margin: 3px 0 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+.spec-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 14px;
+  margin: 14px 0 18px;
+  padding-block: 12px;
+  border-block: 1px solid var(--border);
+  font-size: 0.82rem;
+}
+.spec-list dt { color: var(--muted-2); }
+.spec-list dd { margin: 0; color: var(--ink); font-weight: 600; text-align: end; }
+.viewer-btns { display: flex; flex-direction: column; gap: 8px; }
+.viewer-btns .btn { inline-size: 100%; border-radius: 9px; block-size: 40px; }
+
+.sub-convert-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-block-start: 2px solid var(--orange);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.sub-convert-card h2 {
+  margin: 0 0 6px;
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--white);
+}
+.sub-convert-card p {
+  margin: 0 0 14px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.48;
+}
+.sub-convert-card .btn-subscribe {
+  inline-size: 100%;
+  border-radius: 9px;
+  block-size: 41px;
+}
+
+.related-list { display: flex; flex-direction: column; gap: 10px; margin-block-start: 12px; }
+.related-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  transition: border-color 0.14s ease;
+}
+.related-item:hover { border-color: var(--white); }
+.related-mini-sheet {
+  inline-size: 38px;
+  block-size: 48px;
+  border-radius: 4px;
+  object-fit: cover;
+  object-position: top center;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+/* 5. Clean Black / White SEO Footer */
+.ms-footer {
+  margin-block-start: 36px;
+  background: #0c0c0f;
+  border-block-start: 1px solid var(--border);
+  padding: 28px clamp(14px, 3vw, 28px) 34px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.ms-footer-wrap { inline-size: min(1400px, 100%); margin-inline: auto; }
+.seo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-block-end: 20px;
+}
+.seo-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.seo-box h2, .seo-box h3 {
+  margin: 0 0 6px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.seo-box p { margin: 0; font-size: 0.78rem; line-height: 1.55; color: var(--muted); }
+.seo-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-block-start: 10px; }
+.seo-tag {
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.73rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+.seo-tag:hover { border-color: var(--white); background: var(--surface-2); }
+.seo-faq details { border-block-start: 1px solid var(--border); padding-block: 8px; }
+.seo-faq details:first-of-type { border-block-start: 0; padding-block-start: 2px; }
+.seo-faq summary { cursor: pointer; font-weight: 600; font-size: 0.81rem; color: var(--white); }
+.seo-faq details p { margin: 6px 0 0; font-size: 0.78rem; color: var(--muted); }
+.seo-langs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 14px;
+  margin: 12px auto 0;
+  max-inline-size: 1120px;
+  font-size: 0.73rem;
+  color: var(--muted-2);
+}
+
+/* 6. Native Light-Dismiss Subscribe Modal Dialog (modern-web-guidance: light-dismiss-a-dialog) */
+dialog {
+  inline-size: min(460px, calc(100dvw - 24px));
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  padding: 24px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.78);
+}
+dialog::backdrop { background: rgba(0, 0, 0, 0.74); backdrop-filter: blur(3px); }
+.dlg-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-block-end: 12px; }
+.dlg-head h2 { margin: 0; font-size: 1.08rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; }
+.dlg-close {
+  inline-size: 30px;
+  block-size: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg);
+  color: var(--white);
+  cursor: pointer;
+  font-weight: 700;
+}
+.dlg-steps { margin: 0 0 18px; padding-inline-start: 18px; color: var(--muted); font-size: 0.88rem; }
+.dlg-steps li { margin-block-end: 7px; }
+.dlg-btns { display: flex; flex-direction: column; gap: 8px; }
+.dlg-btns .btn { inline-size: 100%; border-radius: 9px; block-size: 40px; }
+
+/* ===== SEO Breadcrumbs, Rich Guide Sections, Accessible <details> Accordion & Interactive Tools ===== */
+.breadcrumb {
+  inline-size: min(1240px, 100%);
+  margin: 14px auto 0;
+  padding: 0 clamp(12px, 2vw, 28px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--white); text-decoration: underline; }
+.breadcrumb span[aria-current="page"] { color: var(--ink); font-weight: 600; }
+
+.song-rich-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.guide-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-inline-size: 0;
+}
+.guide-card h2 {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+.guide-card h3 {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.guide-card p, .guide-card li {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: var(--muted);
+}
+.guide-card strong { color: var(--ink); }
+.guide-list {
+  margin: 0;
+  padding-inline-start: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.chord-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.chord-sec-box {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.chord-sec-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.chord-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.chord-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 9px;
+  border-radius: 6px;
+  background: #0d0d11;
+  border: 1px solid var(--border-strong);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.chord-tools-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+.pd-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.pd-badge-free {
+  background: rgba(249, 115, 22, 0.14);
+  border: 1px solid rgba(249, 115, 22, 0.45);
+  color: #fdba74;
+}
+.pd-badge-tut {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--border-strong);
+  color: var(--ink);
+}
+.bonus-pack-card {
+  background: linear-gradient(180deg, #16161b 0%, #111115 100%);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.bonus-pack-card h2 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--white);
+}
+.bonus-pack-card p {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Modern Web Guidance: Accessible <details> Accordion (search-hidden-content + accordion) */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.accordion details {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0 14px;
+}
+.accordion summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.accordion summary::-webkit-details-marker { display: none; }
+.accordion summary::before {
+  content: "";
+  inline-size: 14px;
+  block-size: 14px;
+  flex-shrink: 0;
+  background-color: var(--orange);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat center / contain;
+  rotate: -90deg;
+}
+.accordion details[open] > summary::before {
+  rotate: 0deg;
+}
+.accordion details::details-content {
+  interpolate-size: allow-keywords;
+  overflow: clip;
+  contain: layout;
+}
+.accordion details:not([open])::details-content {
+  block-size: 0;
+}
+.accordion details p {
+  margin: 0 0 13px;
+  padding-inline-start: 24px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .accordion summary::before { transition: rotate 0.2s ease; }
+  .accordion details::details-content {
+    transition: block-size 0.28s ease-in-out, content-visibility 0.28s ease-in-out, display 0.28s ease-in-out;
+    transition-behavior: allow-discrete;
+  }
+}
+
+/* Collection Hub & Free Tools Banner Strip on Index */
+.hub-shortcuts-strip {
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  scrollbar-width: none;
+  padding-block: 2px;
+}
+@media (min-width: 900px) {
+  .hub-shortcuts-strip {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
+.ms-main .hub-shortcuts-strip {
+  margin-block-end: 16px;
+}
+.hub-shortcuts-strip::-webkit-scrollbar { display: none; }
+.hub-shortcut-pill {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s;
+}
+.hub-shortcut-pill:hover {
+  border-color: var(--orange);
+  color: var(--white);
+}
+.hub-shortcut-pill.tool-pill {
+  border-color: rgba(249, 115, 22, 0.5);
+  background: rgba(249, 115, 22, 0.1);
+  color: #fed7aa;
+}
+.collection-shell {
+  inline-size: min(1240px, 100%);
+  margin: 18px auto 40px;
+  padding: 0 clamp(12px, 2vw, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.collection-hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: clamp(18px, 3vw, 28px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+}
+.collection-hero h1 {
+  margin: 6px 0 8px;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-weight: 850;
+  letter-spacing: -0.03em;
+  color: var(--white);
+}
+.collection-hero p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  max-inline-size: 72ch;
+}
+@media (max-width: 760px) {
+  .collection-hero { grid-template-columns: 1fr; }
+}
+
+/* Interactive Tools (Chord Finder + Blank Staff Paper Generator) */
+.tool-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(290px, 0.65fr);
+  gap: 18px;
+  align-items: start;
+}
+@media (max-width: 920px) {
+  .tool-grid { grid-template-columns: minmax(0, 1fr); }
+}
+.tool-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: end;
+}
+.tool-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-inline-size: 120px;
+  flex: 1 1 130px;
+}
+.tool-field label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.tool-input, .tool-select {
+  block-size: 40px;
+  padding: 0 11px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background: #0b0b0e;
+  color: var(--white);
+  font-size: 0.88rem;
+}
+.piano-kb-wrap {
+  overflow-x: auto;
+  padding: 12px 6px 6px;
+  background: #0a0a0d;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.piano-kb {
+  position: relative;
+  display: flex;
+  inline-size: 672px;
+  block-size: 168px;
+  margin-inline: auto;
+  user-select: none;
+}
+.pkey-w {
+  position: relative;
+  flex: 1;
+  background: linear-gradient(180deg, #fafafa 0%, #eaeaea 100%);
+  border: 1px solid #27272a;
+  border-radius: 0 0 6px 6px;
+  color: #27272a;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.pkey-w.active {
+  background: linear-gradient(180deg, #fed7aa 0%, #f97316 100%);
+  color: #ffffff;
+  border-color: #ea580c;
+}
+.pkey-b {
+  position: absolute;
+  inset-block-start: 0;
+  inline-size: 30px;
+  block-size: 104px;
+  background: linear-gradient(180deg, #27272a 0%, #09090b 100%);
+  border: 1px solid #09090b;
+  border-radius: 0 0 5px 5px;
+  color: #d4d4d8;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 7px;
+  font-size: 0.64rem;
+  font-weight: 700;
+  z-index: 3;
+  cursor: pointer;
+}
+.pkey-b.active {
+  background: linear-gradient(180deg, #fb923c 0%, #ea580c 100%);
+  color: #ffffff;
+}
+.staff-paper-preview {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  max-inline-size: 560px;
+  margin-inline: auto;
+}
+@media print {
+  body * { visibility: hidden; }
+  #printStaffArea, #printStaffArea * { visibility: visible; }
+  #printStaffArea {
+    position: fixed;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    max-inline-size: none;
+    border-radius: 0;
+  }
+}
+</style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Free Printable Blank Piano Sheet Music PDF Generator (US Letter & A4)", "url": "https://trantrunghieuvns.github.io/rickthepianist-free-sheets/tools/blank-piano-sheet-music-pdf.html", "inLanguage": ["en-US", "vi-US"], "applicationCategory": "MusicApplication", "operatingSystem": "Any (Web Browser)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Generate and download crisp vector US Letter & A4 printable blank piano grand staff sheet music PDFs with custom title and stave spacing."}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Piano Sheet Hub", "item": "https://trantrunghieuvns.github.io/rickthepianist-free-sheets/"}, {"@type": "ListItem", "position": 2, "name": "Blank Piano Sheet Music PDF Generator", "item": "https://trantrunghieuvns.github.io/rickthepianist-free-sheets/tools/blank-piano-sheet-music-pdf.html"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What paper sizes does this blank piano sheet music PDF support?", "acceptedAnswer": {"@type": "Answer", "text": "US Letter (8.5 × 11 inches — standard USA/Canada) is selected by default, and you can also switch to international A4 (210 × 297 mm) with crisp vector grand staves that print cleanly on any US home or music-school printer."}}, {"@type": "Question", "name": "How many grand staves per page should I choose for piano writing?", "acceptedAnswer": {"@type": "Answer", "text": "Choose 4 grand staves per page for beginners, young students, or songs with lyrics between staves; choose 5 staves for standard solo piano arrangements; and choose 6 staves for dense classical or jazz notation."}}, {"@type": "Question", "name": "Is the downloaded blank piano manuscript PDF truly vector quality and free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The PDF is generated directly in your browser using pure PostScript/PDF 1.4 vector lines—razor sharp at any zoom level, zero account needed, and 100% free for personal or classroom printing."}}]}]}</script>
+  
+</head>
+<body>
+  <header class="ms-header">
+    <div class="ms-header-inner">
+      <a class="brand-link" href="../index.html">
+        <svg class="brand-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="1" y="1" width="26" height="26" rx="6" fill="#FFFFFF"/><rect x="5" y="14" width="18" height="10" rx="1.5" fill="#FFFFFF" stroke="#09090B" stroke-width="1.2"/><line x1="9.5" y1="14" x2="9.5" y2="24" stroke="#09090B" stroke-width="1.1"/><line x1="14" y1="14" x2="14" y2="24" stroke="#09090B" stroke-width="1.1"/><line x1="18.5" y1="14" x2="18.5" y2="24" stroke="#09090B" stroke-width="1.1"/><rect x="8" y="14" width="3" height="6" rx="0.5" fill="#09090B"/><rect x="12.5" y="14" width="3" height="6" rx="0.5" fill="#09090B"/><rect x="17" y="14" width="3" height="6" rx="0.5" fill="#09090B"/><circle cx="14" cy="8.5" r="2.6" fill="#F97316"/></svg>
+        <span class="brand-text">
+          <span class="brand-name">RickThePianist</span>
+          <span class="brand-sub">Free Piano Tools</span>
+        </span>
+      </a>
+      <div class="ms-header-actions">
+        <a class="btn btn-outline" href="../index.html" style="block-size:36px;">← Piano Sheets</a>
+        <a class="btn btn-subscribe" href="https://www.youtube.com/@rickthepianist?sub_confirmation=1&utm_source=rickthepianist_web&utm_medium=free_sheet_hub&utm_campaign=subscribe_for_request_sheets" target="_blank" rel="noopener" data-ev="click_subscribe_topbar" data-song="tool_blank_pdf" style="block-size:36px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg> Subscribe</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Blank Piano Sheet Music PDF Generator</span>
+  </nav>
+
+  <main class="collection-shell">
+    <section class="collection-hero">
+      <div>
+        <span class="ms-hero-kicker">US Letter &amp; A4 Printable Grand Staff Paper • Pure Vector PDF • Free</span>
+        <h1>Blank Piano Sheet Music PDF Generator</h1>
+        <p>Create custom US Letter &amp; A4 printable blank piano manuscript paper with treble and bass grand staves, barlines, and optional title header. Downloads instantaneously as a crisp vector PDF—no signup or watermark lock.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;min-inline-size:220px;">
+        <a class="btn btn-white" href="https://rickthepianist.gumroad.com/l/free-piano-sheets" target="_blank" rel="noopener" data-ev="click_free_pdf" data-song="tool_blank_pdf">Free 11-Song Piano PDF Pack</a>
+        <a class="btn btn-outline" href="piano-chord-finder-transposer.html">🎹 Chord Finder &amp; Transposer →</a>
+      </div>
+    </section>
+
+    <div class="tool-grid">
+      <section class="guide-card" aria-labelledby="preview-h">
+        <h2 id="preview-h">Live Printable Page Preview</h2>
+        <div class="staff-paper-preview" id="printStaffArea">
+          <svg id="staffSvg" viewBox="0 0 612 792" style="inline-size:100%;block-size:auto;display:block;" role="img" aria-label="Blank piano grand staff paper preview"></svg>
+        </div>
+      </section>
+
+      <aside class="guide-card" aria-labelledby="cfg-h">
+        <h2 id="cfg-h">Customize &amp; Download PDF</h2>
+        <div class="tool-field" style="flex:none;">
+          <label for="paperSel">Paper Size</label>
+          <select id="paperSel" class="tool-select">
+            <option value="letter" selected>US Letter (8.5 × 11 in — USA/Canada)</option>
+            <option value="a4">A4 (210 × 297 mm — International)</option>
+          </select>
+        </div>
+        <div class="tool-field" style="flex:none;">
+          <label for="stavesSel">Grand Staves per Page</label>
+          <select id="stavesSel" class="tool-select">
+            <option value="4">4 Grand Staves (Spacious / Lyrics / Beginners)</option>
+            <option value="5" selected>5 Grand Staves (Standard Solo Piano)</option>
+            <option value="6">6 Grand Staves (Dense / Classical Study)</option>
+          </select>
+        </div>
+        <div class="tool-field" style="flex:none;">
+          <label for="barsSel">Measures per System</label>
+          <select id="barsSel" class="tool-select">
+            <option value="0">No Barlines (Free Sketch)</option>
+            <option value="4" selected>4 Measures per System</option>
+          </select>
+        </div>
+        <div class="tool-field" style="flex:none;">
+          <label for="titleInput">Header Title (Optional, ASCII)</label>
+          <input id="titleInput" class="tool-input" type="text" placeholder="e.g. Winter Nocturne in C Minor" maxlength="64">
+        </div>
+        <div class="tool-field" style="flex:none;">
+          <label for="composerInput">Composer / Student Name (Optional)</label>
+          <input id="composerInput" class="tool-input" type="text" placeholder="e.g. Arranged for Solo Piano" maxlength="64">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
+          <button type="button" id="downloadPdfBtn" class="btn btn-white" style="block-size:42px;">⬇ Download Printable Vector PDF</button>
+          <button type="button" id="printBtn" class="btn btn-outline" style="block-size:40px;">🖨 Print Directly</button>
+          <a class="btn btn-subscribe" href="https://www.youtube.com/@rickthepianist?sub_confirmation=1&utm_source=rickthepianist_web&utm_medium=free_sheet_hub&utm_campaign=subscribe_for_request_sheets" target="_blank" rel="noopener" data-ev="click_subscribe_request" data-song="tool_blank_pdf" style="block-size:40px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg> Subscribe to @rickthepianist</a>
+        </div>
+        <p id="pdfStatus" style="font-size:0.78rem;color:#fdba74;min-block-size:1.2em;"></p>
+      </aside>
+    </div>
+
+    <section class="guide-card" aria-labelledby="blank-guide-h">
+      <h2 id="blank-guide-h">Why Pianists &amp; Music Teachers Love Clean Vector Grand Staff Paper</h2>
+      <p>Low-resolution JPEG staff templates blur when printed on home inkjets and leave cramped spacing between the treble and bass clefs. This free generator builds true mathematical vector lines directly inside a standard PDF 1.4 file—meaning every staff line, barline, and left system brace prints razor-sharp at 300–1200 DPI on both <strong>US Letter</strong> and <strong>A4</strong> paper.</p>
+      <p>Looking for ready-to-play felt piano scores instead? Browse our <a href="../collections/christmas-piano-sheet-music-pdf.html" style="color:var(--white);text-decoration:underline;">Free Christmas Piano Sheets</a>, <a href="../collections/classical-piano-sheet-music-pdf.html" style="color:var(--white);text-decoration:underline;">Public Domain Classical Library</a>, or download the complete <a href="https://rickthepianist.gumroad.com/l/winter-classical-piano-book" target="_blank" rel="noopener" style="color:var(--white);text-decoration:underline;">44-Page Winter &amp; Classical Piano Book + 11 MIDIs</a>.</p>
+    </section>
+
+    <section class="guide-card accordion" aria-labelledby="blank-faq-h">
+      <h2 id="blank-faq-h">Frequently Asked Questions</h2>
+      <details open><summary>What paper sizes does this blank piano sheet music PDF support?</summary><p>US Letter (8.5 × 11 inches — standard USA/Canada) is selected by default, and you can also switch to international A4 (210 × 297 mm) with crisp vector grand staves that print cleanly on any US home or music-school printer.</p></details><details><summary>How many grand staves per page should I choose for piano writing?</summary><p>Choose 4 grand staves per page for beginners, young students, or songs with lyrics between staves; choose 5 staves for standard solo piano arrangements; and choose 6 staves for dense classical or jazz notation.</p></details><details><summary>Is the downloaded blank piano manuscript PDF truly vector quality and free?</summary><p>Yes. The PDF is generated directly in your browser using pure PostScript/PDF 1.4 vector lines—razor sharp at any zoom level, zero account needed, and 100% free for personal or classroom printing.</p></details>
+    </section>
+  </main>
+
+  <footer class="ms-footer" style="text-align:center;">
+    <strong>RickThePianist</strong> • <a href="../index.html" style="color:var(--white);text-decoration:underline;">All Piano Scores</a> •
+    <a href="piano-chord-finder-transposer.html" style="color:var(--white);text-decoration:underline;">Piano Chord Finder</a> •
+    <a href="https://www.youtube.com/@rickthepianist?sub_confirmation=1&utm_source=rickthepianist_web&utm_medium=free_sheet_hub&utm_campaign=subscribe_for_request_sheets" target="_blank" rel="noopener" style="color:var(--white);text-decoration:underline;">YouTube @rickthepianist</a>
+  </footer>
+
+  <script>
+    const paperSel = document.getElementById('paperSel');
+    const stavesSel = document.getElementById('stavesSel');
+    const barsSel = document.getElementById('barsSel');
+    const titleInput = document.getElementById('titleInput');
+    const composerInput = document.getElementById('composerInput');
+    const svgEl = document.getElementById('staffSvg');
+
+    function getLayout() {
+      const isA4 = paperSel.value === 'a4';
+      const W = isA4 ? 595 : 612;
+      const H = isA4 ? 842 : 792;
+      const staves = Number(stavesSel.value) || 5;
+      const bars = Number(barsSel.value) || 0;
+      const title = titleInput.value.trim();
+      const composer = composerInput.value.trim();
+      const marginX = 46;
+      const topPad = (title || composer) ? 102 : 56;
+      const bottomPad = 48;
+      const availH = H - topPad - bottomPad;
+      const step = availH / staves;
+      const lineGap = 5.4;
+      const staffH = lineGap * 4;
+      const innerGap = Math.min(34, Math.max(22, step * 0.24));
+      return { W, H, staves, bars, title, composer, marginX, topPad, step, lineGap, staffH, innerGap };
+    }
+
+    function escXml(s) {
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function renderSvg() {
+      const L = getLayout();
+      svgEl.setAttribute('viewBox', `0 0 ${L.W} ${L.H}`);
+      const parts = [`<rect x="0" y="0" width="${L.W}" height="${L.H}" fill="#ffffff"/>`];
+      if (L.title) {
+        parts.push(`<text x="${L.W/2}" y="48" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#111111">${escXml(L.title)}</text>`);
+      }
+      if (L.composer) {
+        parts.push(`<text x="${L.W - L.marginX}" y="74" text-anchor="end" font-family="Georgia, serif" font-size="11" font-style="italic" fill="#333333">${escXml(L.composer)}</text>`);
+      }
+      const x1 = L.marginX, x2 = L.W - L.marginX;
+      for (let s = 0; s < L.staves; s++) {
+        const yTop = L.topPad + s * L.step;
+        const yBass = yTop + L.staffH + L.innerGap;
+        const yEnd = yBass + L.staffH;
+        // Left grand-staff bracket & barline
+        parts.push(`<line x1="${x1}" y1="${yTop}" x2="${x1}" y2="${yEnd}" stroke="#111" stroke-width="1.4"/>`);
+        parts.push(`<line x1="${x1 - 5}" y1="${yTop}" x2="${x1 - 5}" y2="${yEnd}" stroke="#111" stroke-width="2.2"/>`);
+        parts.push(`<line x1="${x2}" y1="${yTop}" x2="${x2}" y2="${yEnd}" stroke="#111" stroke-width="1.4"/>`);
+        for (let i = 0; i < 5; i++) {
+          const yt = (yTop + i * L.lineGap).toFixed(2);
+          const yb = (yBass + i * L.lineGap).toFixed(2);
+          parts.push(`<line x1="${x1}" y1="${yt}" x2="${x2}" y2="${yt}" stroke="#222" stroke-width="0.75"/>`);
+          parts.push(`<line x1="${x1}" y1="${yb}" x2="${x2}" y2="${yb}" stroke="#222" stroke-width="0.75"/>`);
+        }
+        if (L.bars > 1) {
+          const barW = (x2 - x1) / L.bars;
+          for (let b = 1; b < L.bars; b++) {
+            const bx = (x1 + b * barW).toFixed(2);
+            parts.push(`<line x1="${bx}" y1="${yTop}" x2="${bx}" y2="${yEnd}" stroke="#444" stroke-width="0.75"/>`);
+          }
+        }
+      }
+      parts.push(`<text x="${L.W/2}" y="${L.H - 18}" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8.5" fill="#777777">Free Blank Piano Sheet Music • RickThePianist (youtube.com/@rickthepianist)</text>`);
+      svgEl.innerHTML = parts.join('');
+    }
+
+    function pdfSafeAscii(str) {
+      return str.replace(/[^\x20-\x7E]/g, '').replace(/\\/g, '\\\\').replace(/\(/g, '\\(').replace(/\)/g, '\\)');
+    }
+
+    function generateVectorPdfBytes() {
+      const L = getLayout();
+      const cmds = [];
+      const pdfY = (svgY) => (L.H - svgY).toFixed(2);
+      const x1 = L.marginX, x2 = L.W - L.marginX;
+
+      if (L.title) {
+        const safeT = pdfSafeAscii(L.title);
+        const estW = safeT.length * 9.2;
+        const tx = Math.max(L.marginX, (L.W - estW) / 2).toFixed(2);
+        cmds.push(`BT /F2 18 Tf ${tx} ${pdfY(48)} Td (${safeT}) Tj ET`);
+      }
+      if (L.composer) {
+        const safeC = pdfSafeAscii(L.composer);
+        const estW = safeC.length * 5.6;
+        const cx = Math.max(L.marginX, x2 - estW).toFixed(2);
+        cmds.push(`BT /F1 11 Tf ${cx} ${pdfY(74)} Td (${safeC}) Tj ET`);
+      }
+
+      cmds.push('0.1 0.1 0.1 RG');
+      for (let s = 0; s < L.staves; s++) {
+        const yTop = L.topPad + s * L.step;
+        const yBass = yTop + L.staffH + L.innerGap;
+        const yEnd = yBass + L.staffH;
+        // Grand staff system barlines & brace bar
+        cmds.push(`1.3 w ${x1} ${pdfY(yTop)} m ${x1} ${pdfY(yEnd)} l S`);
+        cmds.push(`2.2 w ${x1 - 5} ${pdfY(yTop)} m ${x1 - 5} ${pdfY(yEnd)} l S`);
+        cmds.push(`1.3 w ${x2} ${pdfY(yTop)} m ${x2} ${pdfY(yEnd)} l S`);
+        cmds.push('0.65 w');
+        for (let i = 0; i < 5; i++) {
+          const yt = pdfY(yTop + i * L.lineGap);
+          const yb = pdfY(yBass + i * L.lineGap);
+          cmds.push(`${x1} ${yt} m ${x2} ${yt} l S`);
+          cmds.push(`${x1} ${yb} m ${x2} ${yb} l S`);
+        }
+        if (L.bars > 1) {
+          const barW = (x2 - x1) / L.bars;
+          for (let b = 1; b < L.bars; b++) {
+            const bx = (x1 + b * barW).toFixed(2);
+            cmds.push(`${bx} ${pdfY(yTop)} m ${bx} ${pdfY(yEnd)} l S`);
+          }
+        }
+      }
+      cmds.push(`0.45 0.45 0.45 rg BT /F1 8.5 Tf ${(L.W/2 - 145).toFixed(2)} 20 Td (Free Blank Piano Sheet Music - RickThePianist - youtube.com/@rickthepianist) Tj ET`);
+
+      const stream = cmds.join('\n') + '\n';
+      const objs = [
+        '1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n',
+        '2 0 obj\n<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n',
+        `3 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${L.W} ${L.H}] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>\nendobj\n`,
+        '4 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>\nendobj\n',
+        '5 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Times-Bold >>\nendobj\n',
+        `6 0 obj\n<< /Length ${stream.length} >>\nstream\n${stream}endstream\nendobj\n`,
+      ];
+
+      let pdf = '%PDF-1.4\n';
+      const offsets = [0];
+      for (const o of objs) {
+        offsets.push(pdf.length);
+        pdf += o;
+      }
+      const xrefPos = pdf.length;
+      pdf += `xref\n0 ${objs.length + 1}\n0000000000 65535 f \n`;
+      for (let i = 1; i <= objs.length; i++) {
+        pdf += String(offsets[i]).padStart(10, '0') + ' 00000 n \n';
+      }
+      pdf += `trailer\n<< /Size ${objs.length + 1} /Root 1 0 R >>\nstartxref\n${xrefPos}\n%%EOF\n`;
+      return new TextEncoder().encode(pdf);
+    }
+
+    window.__generateVectorPdfBytes = generateVectorPdfBytes;
+
+    [paperSel, stavesSel, barsSel, titleInput, composerInput].forEach(el => el.addEventListener('input', renderSvg));
+    document.getElementById('downloadPdfBtn').addEventListener('click', () => {
+      const bytes = generateVectorPdfBytes();
+      const blob = new Blob([bytes], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Blank_Piano_Grand_Staff_${paperSel.value.toUpperCase()}_${stavesSel.value}staves_RickThePianist.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 4000);
+      document.getElementById('pdfStatus').textContent = `Downloaded crisp vector PDF (${(bytes.length / 1024).toFixed(1)} KB).`;
+    });
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+    renderSvg();
+  </script>
+</body>
+</html>
