@@ -232,6 +232,31 @@ img { display: block; max-inline-size: 100%; }
   border-color: #6b7280;
   color: #ffffff;
 }
+/* LUXURY CHAMPAGNE-GOLD COFFEE SUPPORT BUTTON ([BLACK-128]) */
+.btn-coffee {
+  background: #1a150e;
+  color: #f6dfa4;
+  border-color: #c8a253;
+}
+.btn-coffee:hover {
+  background: #292014;
+  border-color: #eec672;
+  color: #fff4d2;
+}
+.sidebar-coffee-box {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(238, 198, 114, 0.35);
+  background: linear-gradient(180deg, rgba(32, 25, 14, 0.9), rgba(16, 14, 12, 0.95));
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sidebar-coffee-box strong { color: #f6dfa4; font-size: 0.88rem; }
+.sidebar-coffee-box p { margin: 0; font-size: 0.78rem; color: var(--muted); line-height: 1.45; }
+.coffee-sub-link { font-size: 0.76rem; color: #d8c394; text-decoration: underline; text-align: center; }
+.coffee-sub-link:hover { color: #fff4d2; }
 /* CLEAN BLACK OUTLINE SECONDARY */
 .btn-outline {
   background: transparent;
@@ -1025,9 +1050,12 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.74); backdrop-filter: blur(3px); 
         </dl>
 
         <div class="viewer-btns">
-          <a class="btn btn-white" href="https://drive.google.com/file/d/1MfhWs7YQzYsDdnLRPKjw63k2roNocwY-/view?usp=sharing" target="_blank" rel="noopener" data-ev="click_free_pdf" data-song="we-wish-you-a-merry-christmas">Download Free PDF</a>
+          <a class="btn btn-white" href="https://rickthepianist.gumroad.com/l/free-piano-sheets" target="_blank" rel="noopener" data-ev="click_free_pdf" data-song="we-wish-you-a-merry-christmas">Download Free Sheets (Gumroad)</a>
+          <a class="btn btn-outline" href="https://rickthepianist.gumroad.com/l/winter-classical-piano-book" target="_blank" rel="noopener" data-ev="click_sheet_book" data-song="we-wish-you-a-merry-christmas">📖 11-Song Book + MIDIs ($9.99)</a>
           
+          <a class="btn btn-coffee" href="https://rickthepianist.gumroad.com/coffee" target="_blank" rel="noopener" data-ev="click_buy_coffee" data-song="we-wish-you-a-merry-christmas">☕ Buy Me a Coffee</a>
         </div>
+        <a class="coffee-sub-link" href="https://rickthepianist.gumroad.com/l/club" target="_blank" rel="noopener" data-ev="click_piano_club" data-song="we-wish-you-a-merry-christmas">Or join the Monthly Piano Club ($3/mo) →</a>
       </div>
 
       <section class="sub-convert-card">
